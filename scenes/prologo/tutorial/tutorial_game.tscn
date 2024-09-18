@@ -1,0 +1,242 @@
+[gd_scene load_steps=14 format=3 uid="uid://npkc1kxfwx3j"]
+
+[ext_resource type="Script" path="res://script/tutorial/tutorial_game.gd" id="1_06ccr"]
+[ext_resource type="PackedScene" uid="uid://nd504s7qkict" path="res://scenes/game/circle.tscn" id="2_bk7n4"]
+[ext_resource type="PackedScene" uid="uid://cc1l4j6ds8l2p" path="res://scenes/game/cross.tscn" id="3_38d0r"]
+[ext_resource type="PackedScene" uid="uid://b1esxukm80kj2" path="res://scenes/window_dialogue_final.tscn" id="4_4gq6d"]
+[ext_resource type="Texture2D" uid="uid://c8y6jhtwmpdo2" path="res://art/tic tac toe/grid.png" id="4_7xvmv"]
+[ext_resource type="Texture2D" uid="uid://bp206gfcrxfdo" path="res://art/tic tac toe/bg-game.png" id="4_tulrc"]
+[ext_resource type="Texture2D" uid="uid://c7xaq0u6ymk3l" path="res://art/tic tac toe/grid-tutorial.png" id="5_dkxp6"]
+[ext_resource type="Texture2D" uid="uid://bwiwms7ffslb2" path="res://art/irla/face/irla-draw-normal-face-shadow.png" id="8_p01wr"]
+
+[sub_resource type="Animation" id="Animation_545hl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("transition:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.784314)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/CanvasModulate:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_gwqu6"]
+resource_name = "end_act"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("transition:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_add_a_scene_manually"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/CanvasModulate:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_kl46u"]
+resource_name = "transition"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("transition:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/CanvasModulate:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_nj5rv"]
+resource_name = "tutorial_1"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.784314), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k6t3h"]
+_data = {
+"RESET": SubResource("Animation_545hl"),
+"end_act": SubResource("Animation_gwqu6"),
+"transition": SubResource("Animation_kl46u"),
+"tutorial_1": SubResource("Animation_nj5rv")
+}
+
+[node name="tutorialGame" type="Node"]
+script = ExtResource("1_06ccr")
+circle_scene = ExtResource("2_bk7n4")
+cross_scene = ExtResource("3_38d0r")
+TextScene = ExtResource("4_4gq6d")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="bg" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_tulrc")
+expand_mode = 1
+
+[node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer"]
+
+[node name="bg" type="TextureRect" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -344.0
+offset_top = -224.0
+offset_right = 474.0
+offset_bottom = 262.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_tulrc")
+expand_mode = 1
+
+[node name="grid" type="TextureRect" parent="."]
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 185.0
+grow_vertical = 2
+texture = ExtResource("5_dkxp6")
+expand_mode = 1
+
+[node name="gridSprite" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(93, 90)
+scale = Vector2(0.307, 0.295)
+texture = ExtResource("4_7xvmv")
+
+[node name="transition" type="CanvasModulate" parent="."]
+visible = false
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_k6t3h")
+}
+
+[node name="irla" type="Sprite2D" parent="."]
+position = Vector2(276, 122)
+scale = Vector2(0.244, 0.244)
+texture = ExtResource("8_p01wr")
+
+[node name="AnimatedSprite2D" parent="." instance=ExtResource("3_38d0r")]
+position = Vector2(153, 151)
+
+[node name="disabled" type="ColorRect" parent="."]
+offset_top = 117.0
+offset_right = 62.0
+offset_bottom = 180.0
+color = Color(0, 0, 0, 0)
+
+[node name="disabled2" type="ColorRect" parent="."]
+offset_left = 61.0
+offset_top = 59.0
+offset_right = 123.0
+offset_bottom = 122.0
+color = Color(1, 1, 1, 0)
+
+[node name="disabled3" type="ColorRect" parent="."]
+offset_left = 122.0
+offset_top = -7.0
+offset_right = 184.0
+offset_bottom = 194.0
+color = Color(0, 0, 0, 0)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(100, 89)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 185.0
+offset_bottom = 180.0
+color = Color(0, 0, 0, 0.784314)
+
+[connection signal="mouse_entered" from="disabled" to="." method="_on_disabled_mouse_entered"]
+[connection signal="mouse_exited" from="disabled" to="." method="_on_disabled_mouse_exited"]
+[connection signal="mouse_entered" from="disabled2" to="." method="_on_disabled_2_mouse_entered"]
+[connection signal="mouse_exited" from="disabled2" to="." method="_on_disabled_2_mouse_exited"]
+[connection signal="mouse_entered" from="disabled3" to="." method="_on_disabled_3_mouse_entered"]
+[connection signal="mouse_exited" from="disabled3" to="." method="_on_disabled_3_mouse_exited"]

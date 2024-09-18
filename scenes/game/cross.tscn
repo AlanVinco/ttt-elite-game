@@ -1,0 +1,111 @@
+[gd_scene load_steps=17 format=3 uid="uid://cc1l4j6ds8l2p"]
+
+[ext_resource type="Texture2D" uid="uid://3a7dxvaly4ip" path="res://art/tic tac toe/cross-sheet.png" id="1_bssff"]
+[ext_resource type="Script" path="res://script/game/circle.gd" id="2_3uws4"]
+[ext_resource type="AudioStream" uid="uid://uo2ifxiaa0ew" path="res://music/sounds/cross_sound.mp3" id="3_ve7a1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2fm0d"]
+atlas = ExtResource("1_bssff")
+region = Rect2(0, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_utdk4"]
+atlas = ExtResource("1_bssff")
+region = Rect2(120, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_una3e"]
+atlas = ExtResource("1_bssff")
+region = Rect2(240, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bysd0"]
+atlas = ExtResource("1_bssff")
+region = Rect2(360, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5nw8u"]
+atlas = ExtResource("1_bssff")
+region = Rect2(480, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_arnsg"]
+atlas = ExtResource("1_bssff")
+region = Rect2(600, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_51ixk"]
+atlas = ExtResource("1_bssff")
+region = Rect2(720, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gfgo3"]
+atlas = ExtResource("1_bssff")
+region = Rect2(840, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m7ma5"]
+atlas = ExtResource("1_bssff")
+region = Rect2(960, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vsvk1"]
+atlas = ExtResource("1_bssff")
+region = Rect2(1080, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhppo"]
+atlas = ExtResource("1_bssff")
+region = Rect2(1200, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oldhy"]
+atlas = ExtResource("1_bssff")
+region = Rect2(1320, 0, 120, 120)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0u2lj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2fm0d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_utdk4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_una3e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bysd0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5nw8u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_arnsg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_51ixk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gfgo3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m7ma5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vsvk1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qhppo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oldhy")
+}],
+"loop": true,
+"name": &"draw",
+"speed": 14.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_0u2lj")
+animation = &"draw"
+frame_progress = 0.190776
+script = ExtResource("2_3uws4")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ve7a1")
+volume_db = 5.943
+autoplay = true
+
+[connection signal="animation_looped" from="." to="." method="_on_animation_looped"]

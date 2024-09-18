@@ -1,0 +1,98 @@
+[gd_scene load_steps=15 format=3 uid="uid://nd504s7qkict"]
+
+[ext_resource type="Texture2D" uid="uid://bsxmnerruedbs" path="res://art/tic tac toe/circle-sheet.png" id="1_sv417"]
+[ext_resource type="Script" path="res://script/game/circle.gd" id="2_53vba"]
+[ext_resource type="AudioStream" uid="uid://dpx1rol6lmjpt" path="res://music/sounds/circle_sound.mp3" id="3_dwjrc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gpwn5"]
+atlas = ExtResource("1_sv417")
+region = Rect2(0, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kqlmm"]
+atlas = ExtResource("1_sv417")
+region = Rect2(120, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v8s27"]
+atlas = ExtResource("1_sv417")
+region = Rect2(240, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0vgp6"]
+atlas = ExtResource("1_sv417")
+region = Rect2(360, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ydd71"]
+atlas = ExtResource("1_sv417")
+region = Rect2(480, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w60ht"]
+atlas = ExtResource("1_sv417")
+region = Rect2(600, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_an50l"]
+atlas = ExtResource("1_sv417")
+region = Rect2(720, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_del3p"]
+atlas = ExtResource("1_sv417")
+region = Rect2(840, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tuved"]
+atlas = ExtResource("1_sv417")
+region = Rect2(960, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8j0p"]
+atlas = ExtResource("1_sv417")
+region = Rect2(1080, 0, 120, 120)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4gc86"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gpwn5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kqlmm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v8s27")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0vgp6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ydd71")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w60ht")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_an50l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_del3p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tuved")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8j0p")
+}],
+"loop": true,
+"name": &"draw",
+"speed": 12.0
+}]
+
+[node name="circle" type="AnimatedSprite2D"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_4gc86")
+animation = &"draw"
+frame = 1
+frame_progress = 0.579392
+script = ExtResource("2_53vba")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_dwjrc")
+volume_db = 6.171
+autoplay = true
+
+[connection signal="animation_looped" from="." to="." method="_on_animation_looped"]

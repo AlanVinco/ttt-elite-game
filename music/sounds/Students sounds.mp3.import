@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dyae68qqeijxv"
+path="res://.godot/imported/Students sounds.mp3-bd8b7cdd9c612607a601a7d31f9c645b.mp3str"
+
+[deps]
+
+source_file="res://music/sounds/Students sounds.mp3"
+dest_files=["res://.godot/imported/Students sounds.mp3-bd8b7cdd9c612607a601a7d31f9c645b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

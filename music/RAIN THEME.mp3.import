@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bk5kxs8jg52de"
+path="res://.godot/imported/RAIN THEME.mp3-38b0dde96cdacb02b49b8c9fd7290ee6.mp3str"
+
+[deps]
+
+source_file="res://music/RAIN THEME.mp3"
+dest_files=["res://.godot/imported/RAIN THEME.mp3-38b0dde96cdacb02b49b8c9fd7290ee6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://dqpq2tjjaibpm"]
+
+[ext_resource type="Script" path="res://script/chapter_1/chapter_1_part_2.gd" id="1_ibph7"]
+[ext_resource type="Texture2D" uid="uid://drrs4f71e23de" path="res://art/bg/school/bg3.jpeg" id="1_v42rn"]
+[ext_resource type="PackedScene" uid="uid://bpcs5g3fijv0l" path="res://scenes/player.tscn" id="2_fbasj"]
+[ext_resource type="PackedScene" uid="uid://u2e6yaiphjic" path="res://scenes/irla_player.tscn" id="3_mvhyn"]
+
+[node name="chapter1Part2" type="Node2D"]
+script = ExtResource("1_ibph7")
+
+[node name="bg" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(81.5, 77)
+scale = Vector2(0.614258, 0.205078)
+texture = ExtResource("1_v42rn")
+
+[node name="irla_player" parent="." instance=ExtResource("3_mvhyn")]
+position = Vector2(25, 123)
+
+[node name="player" parent="." instance=ExtResource("2_fbasj")]
+position = Vector2(131, 127)

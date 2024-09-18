@@ -1,0 +1,58 @@
+[gd_scene load_steps=11 format=3 uid="uid://bj4qn7yldhmr2"]
+
+[ext_resource type="Script" path="res://script/chapter_1/day1/chapter_1_day_1.gd" id="1_7f215"]
+[ext_resource type="Texture2D" uid="uid://drrs4f71e23de" path="res://art/bg/school/bg3.jpeg" id="2_evx2x"]
+[ext_resource type="PackedScene" uid="uid://bxqq6gngo61b7" path="res://scenes/chapter_1/day1/chapter_1_day_1_hallway.tscn" id="2_igdnu"]
+[ext_resource type="PackedScene" uid="uid://u2e6yaiphjic" path="res://scenes/irla_player.tscn" id="3_46ywi"]
+[ext_resource type="PackedScene" uid="uid://bpcs5g3fijv0l" path="res://scenes/player.tscn" id="4_h4m5e"]
+[ext_resource type="PackedScene" uid="uid://dpl6yr04nxcg8" path="res://scenes/HUD/hud.tscn" id="5_kspib"]
+[ext_resource type="PackedScene" uid="uid://c4gwrvpsn2a" path="res://scenes/characters/breef.tscn" id="6_xwyw8"]
+[ext_resource type="AudioStream" uid="uid://dyae68qqeijxv" path="res://music/sounds/Students sounds.mp3" id="7_tlqof"]
+[ext_resource type="AudioStream" uid="uid://cdh5pxg2nfpl" path="res://music/CLASSROOM THEME.mp3" id="8_j0b2s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iyyoa"]
+size = Vector2(20, 192)
+
+[node name="chapter1Day1" type="Node2D"]
+script = ExtResource("1_7f215")
+next_scene = ExtResource("2_igdnu")
+
+[node name="bg" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(81.5, 77)
+scale = Vector2(0.614258, 0.205078)
+texture = ExtResource("2_evx2x")
+
+[node name="irla_player" parent="." instance=ExtResource("3_46ywi")]
+position = Vector2(25, 123)
+
+[node name="Breef" parent="." instance=ExtResource("6_xwyw8")]
+position = Vector2(227, 117)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+
+[node name="player" parent="." instance=ExtResource("4_h4m5e")]
+position = Vector2(131, 127)
+
+[node name="Classroom sounds" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_tlqof")
+volume_db = -30.254
+autoplay = true
+parameters/looping = true
+
+[node name="CLASSROOM THEME" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_j0b2s")
+volume_db = -10.085
+pitch_scale = 0.9
+parameters/looping = true
+
+[node name="HUD" parent="." instance=ExtResource("5_kspib")]
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(400, 48)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 40)
+shape = SubResource("RectangleShape2D_iyyoa")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

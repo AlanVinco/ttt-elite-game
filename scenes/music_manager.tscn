@@ -1,0 +1,115 @@
+[gd_scene load_steps=10 format=3 uid="uid://d1gr42naf440u"]
+
+[ext_resource type="AudioStream" uid="uid://db02mxqcq7pyd" path="res://music/IRLA_THEME.mp3" id="1_i0nhj"]
+[ext_resource type="Script" path="res://script/music_manager.gd" id="1_knx1k"]
+[ext_resource type="AudioStream" uid="uid://ws2485gqxh68" path="res://music/BREEF_BATTLE.mp3" id="2_kqhv1"]
+[ext_resource type="AudioStream" uid="uid://o6x37483fw3e" path="res://music/IRLA_MAIN.mp3" id="2_o8v53"]
+[ext_resource type="AudioStream" uid="uid://cgwfku307dibr" path="res://music/BREEF_MAIN.mp3" id="3_cxojc"]
+[ext_resource type="AudioStream" uid="uid://cil241ydqodgw" path="res://music/RAIN_THEME.mp3" id="5_e2xhw"]
+[ext_resource type="AudioStream" uid="uid://cdh5pxg2nfpl" path="res://music/CLASSROOM THEME.mp3" id="6_dtxqa"]
+[ext_resource type="AudioStream" uid="uid://b2p345vplcbhy" path="res://music/JOE BATTLE.mp3" id="8_q2kqg"]
+
+[sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_4alyy"]
+clip_count = 7
+clip_0/name = &"IRLA BATTLE"
+clip_0/stream = ExtResource("1_i0nhj")
+clip_0/auto_advance = 0
+clip_1/name = &"IRLA MAIN"
+clip_1/stream = ExtResource("2_o8v53")
+clip_1/auto_advance = 0
+clip_2/name = &"BREEF MAIN"
+clip_2/stream = ExtResource("3_cxojc")
+clip_2/auto_advance = 0
+clip_3/name = &"BREEF BATTLE"
+clip_3/stream = ExtResource("2_kqhv1")
+clip_3/auto_advance = 0
+clip_4/name = &"RAIN THEME"
+clip_4/stream = ExtResource("5_e2xhw")
+clip_4/auto_advance = 0
+clip_5/name = &"CLASSROOM THEME"
+clip_5/stream = ExtResource("6_dtxqa")
+clip_5/auto_advance = 0
+clip_6/name = &"JOE BATTLE"
+clip_6/stream = ExtResource("8_q2kqg")
+clip_6/auto_advance = 0
+_transitions = {
+Vector2i(0, 4): {
+"fade_beats": 0,
+"fade_mode": 0,
+"from_time": 0,
+"to_time": 1
+},
+Vector2i(0, 5): {
+"fade_beats": 1,
+"fade_mode": 0,
+"from_time": 0,
+"to_time": 1
+},
+Vector2i(1, -1): {
+"fade_beats": 1,
+"fade_mode": 3,
+"from_time": 0,
+"to_time": 1
+},
+Vector2i(1, 0): {
+"fade_beats": 1,
+"fade_mode": 3,
+"from_time": 0,
+"to_time": 1
+},
+Vector2i(1, 1): {
+"fade_beats": 1,
+"fade_mode": 3,
+"from_time": 0,
+"to_time": 1
+},
+Vector2i(1, 2): {
+"fade_beats": 1,
+"fade_mode": 3,
+"from_time": 0,
+"to_time": 1
+},
+Vector2i(1, 3): {
+"fade_beats": 1,
+"fade_mode": 3,
+"from_time": 0,
+"to_time": 1
+},
+Vector2i(2, 4): {
+"fade_beats": 1,
+"fade_mode": 4,
+"from_time": 0,
+"to_time": 1
+},
+Vector2i(3, 5): {
+"fade_beats": 1,
+"fade_mode": 3,
+"from_time": 0,
+"to_time": 1
+},
+Vector2i(4, 3): {
+"fade_beats": 1,
+"fade_mode": 2,
+"from_time": 0,
+"to_time": 1
+},
+Vector2i(5, 6): {
+"fade_beats": 1,
+"fade_mode": 3,
+"from_time": 0,
+"to_time": 1
+},
+Vector2i(6, 5): {
+"fade_beats": 1,
+"fade_mode": 3,
+"from_time": 0,
+"to_time": 1
+}
+}
+
+[node name="MusicManager" type="Node"]
+script = ExtResource("1_knx1k")
+
+[node name="AudioManager" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamInteractive_4alyy")
+volume_db = -10.714

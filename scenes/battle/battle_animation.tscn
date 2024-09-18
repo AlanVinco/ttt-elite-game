@@ -1,0 +1,292 @@
+[gd_scene load_steps=26 format=3 uid="uid://bqbgj3w51p60m"]
+
+[ext_resource type="Script" path="res://script/battle/battle_animation.gd" id="1_kybgs"]
+[ext_resource type="Texture2D" uid="uid://drrs4f71e23de" path="res://art/bg/school/bg3.jpeg" id="1_vtx2j"]
+[ext_resource type="Texture2D" uid="uid://evy73gubqmc3" path="res://art/animations/UI Battle/animation-Sheet.png" id="2_8gpuf"]
+[ext_resource type="Texture2D" uid="uid://b0n2oicaynfdk" path="res://art/animations/UI Battle/player-animation-Sheet.png" id="3_omfxr"]
+
+[sub_resource type="Animation" id="Animation_2rpju"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect/rival_ui:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(145, 30.5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect2/Player_ui_sprites:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-80.75, 30.5)]
+}
+
+[sub_resource type="Animation" id="Animation_xt26l"]
+resource_name = "battle_animation"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5, 0.7, 0.9, 1.1, 1.3, 1.4, 1.9, 2.1, 2.3, 3, 3.2, 3.4, 4.5, 4.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect/rival_ui:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.3, 1.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(145, 30.5), Vector2(-16, 30.5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect2/Player_ui_sprites:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.3, 1.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-80.75, 30.5), Vector2(80.25, 30.5)]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_animation_end"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nb62q"]
+_data = {
+"RESET": SubResource("Animation_2rpju"),
+"battle_animation": SubResource("Animation_xt26l")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ac16"]
+atlas = ExtResource("2_8gpuf")
+region = Rect2(0, 0, 128, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jd1h2"]
+atlas = ExtResource("2_8gpuf")
+region = Rect2(128, 0, 128, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pbhc3"]
+atlas = ExtResource("2_8gpuf")
+region = Rect2(256, 0, 128, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r2ckb"]
+atlas = ExtResource("2_8gpuf")
+region = Rect2(384, 0, 128, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ivx2"]
+atlas = ExtResource("2_8gpuf")
+region = Rect2(512, 0, 128, 58)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xu7dq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ac16")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jd1h2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pbhc3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r2ckb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ivx2")
+}],
+"loop": true,
+"name": &"rival_ui",
+"speed": 15.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dhi0y"]
+atlas = ExtResource("2_8gpuf")
+region = Rect2(0, 0, 128, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4w13e"]
+atlas = ExtResource("2_8gpuf")
+region = Rect2(128, 0, 128, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cobk5"]
+atlas = ExtResource("2_8gpuf")
+region = Rect2(256, 0, 128, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4s8rf"]
+atlas = ExtResource("2_8gpuf")
+region = Rect2(384, 0, 128, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sbehf"]
+atlas = ExtResource("2_8gpuf")
+region = Rect2(512, 0, 128, 58)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5y5jl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dhi0y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4w13e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cobk5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4s8rf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sbehf")
+}],
+"loop": true,
+"name": &"animation",
+"speed": 15.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_amam7"]
+atlas = ExtResource("3_omfxr")
+region = Rect2(0, 0, 128, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_blqmo"]
+atlas = ExtResource("3_omfxr")
+region = Rect2(128, 0, 128, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ca7t"]
+atlas = ExtResource("3_omfxr")
+region = Rect2(256, 0, 128, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f5j8e"]
+atlas = ExtResource("3_omfxr")
+region = Rect2(384, 0, 128, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5mkvx"]
+atlas = ExtResource("3_omfxr")
+region = Rect2(512, 0, 128, 58)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m2ku8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_amam7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_blqmo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ca7t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f5j8e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5mkvx")
+}],
+"loop": true,
+"name": &"player_ui",
+"speed": 15.0
+}]
+
+[node name="BattleAnimation" type="CanvasLayer"]
+script = ExtResource("1_kybgs")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_nb62q")
+}
+
+[node name="bg" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(81.5, 77)
+scale = Vector2(0.614258, 0.205078)
+texture = ExtResource("1_vtx2j")
+
+[node name="rival_ui_sprites" type="AnimatedSprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(409, 29)
+scale = Vector2(1.24219, 1)
+sprite_frames = SubResource("SpriteFrames_xu7dq")
+animation = &"rival_ui"
+frame = 1
+frame_progress = 0.0531655
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -64.0
+offset_right = -24.0
+offset_bottom = 40.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+
+[node name="rival_ui" type="AnimatedSprite2D" parent="TextureRect"]
+position = Vector2(145, 30.5)
+scale = Vector2(1.25, 1.05172)
+sprite_frames = SubResource("SpriteFrames_5y5jl")
+animation = &"animation"
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Player_ui_sprites" type="AnimatedSprite2D" parent="TextureRect2"]
+texture_filter = 1
+position = Vector2(-80.75, 30.5)
+scale = Vector2(1.26025, 1.05172)
+sprite_frames = SubResource("SpriteFrames_m2ku8")
+animation = &"player_ui"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

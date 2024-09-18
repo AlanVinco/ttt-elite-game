@@ -1,0 +1,168 @@
+[gd_scene load_steps=18 format=3 uid="uid://cf84q0kxfp7qc"]
+
+[ext_resource type="Texture2D" uid="uid://b157ogfrbmaut" path="res://art/bg/kof13-southtown-stage.jpg" id="1_dcyvv"]
+[ext_resource type="Script" path="res://script/tutorial/tutorial_school_2.gd" id="1_wv0pt"]
+[ext_resource type="Texture2D" uid="uid://d1vfvtkt01yf8" path="res://art/player/animations/player_caer.png" id="3_ilsm4"]
+[ext_resource type="AudioStream" uid="uid://drdhelg2om2en" path="res://music/sounds/rain_sound.mp3" id="4_1yet4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n5q6i"]
+atlas = ExtResource("3_ilsm4")
+region = Rect2(0, 0, 150, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ewrnr"]
+atlas = ExtResource("3_ilsm4")
+region = Rect2(150, 0, 150, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cx8ll"]
+atlas = ExtResource("3_ilsm4")
+region = Rect2(300, 0, 150, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c2xrh"]
+atlas = ExtResource("3_ilsm4")
+region = Rect2(450, 0, 150, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f8kqv"]
+atlas = ExtResource("3_ilsm4")
+region = Rect2(600, 0, 150, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ndm54"]
+atlas = ExtResource("3_ilsm4")
+region = Rect2(750, 0, 150, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tgnpc"]
+atlas = ExtResource("3_ilsm4")
+region = Rect2(900, 0, 150, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_drxa1"]
+atlas = ExtResource("3_ilsm4")
+region = Rect2(1050, 0, 150, 125)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dnmf0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n5q6i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ewrnr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cx8ll")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c2xrh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f8kqv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ndm54")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tgnpc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_drxa1")
+}],
+"loop": false,
+"name": &"down",
+"speed": 11.0
+}]
+
+[sub_resource type="Animation" id="Animation_0hw2u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.28485, 0.28485, 0.28485, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_rf2k1"]
+resource_name = "transition_end"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.28485, 0.28485, 0.28485, 1), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_yvr27"]
+resource_name = "trasition_start"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0.286275, 0.286275, 0.286275, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_153g2"]
+_data = {
+"RESET": SubResource("Animation_0hw2u"),
+"transition_end": SubResource("Animation_rf2k1"),
+"trasition_start": SubResource("Animation_yvr27")
+}
+
+[node name="tutorialSchool2" type="Node2D"]
+script = ExtResource("1_wv0pt")
+
+[node name="bg" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(83.5003, 89)
+scale = Vector2(0.687378, 0.407725)
+texture = ExtResource("1_dcyvv")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.28485, 0.28485, 0.28485, 1)
+
+[node name="player" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(398, -21)
+sprite_frames = SubResource("SpriteFrames_dnmf0")
+animation = &"down"
+frame = 7
+frame_progress = 1.0
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(0, 1)
+amount = 10000
+local_coords = true
+emission_shape = 3
+emission_rect_extents = Vector2(1000, 1)
+initial_velocity_min = 20.0
+initial_velocity_max = 200.0
+color = Color(0.691357, 0.691357, 0.691357, 1)
+
+[node name="animationScene" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_153g2")
+}
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(158, 88)
+stream = ExtResource("4_1yet4")
+volume_db = -5.673
+autoplay = true
+parameters/looping = false

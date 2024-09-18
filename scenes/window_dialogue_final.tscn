@@ -1,0 +1,89 @@
+[gd_scene load_steps=8 format=3 uid="uid://b1esxukm80kj2"]
+
+[ext_resource type="Script" path="res://scenes/window_dialogue_final.gd" id="1_1r66o"]
+[ext_resource type="Texture2D" uid="uid://bwiwms7ffslb2" path="res://art/irla/face/irla-draw-normal-face-shadow.png" id="3_xq4ya"]
+[ext_resource type="Texture2D" uid="uid://n42gholfmscx" path="res://art/breef/front/breef_test_1.png" id="4_4wxee"]
+[ext_resource type="FontFile" uid="uid://btpd2d0e87gb1" path="res://art/fonts/m6x11.ttf" id="4_m0uob"]
+[ext_resource type="Texture2D" uid="uid://rulg1rj7f27n" path="res://art/ui/black.png" id="5_tus3k"]
+[ext_resource type="AudioStream" uid="uid://b56dcmouu4nvd" path="res://music/sounds/talkFinal.mp3" id="6_0epuj"]
+[ext_resource type="Texture2D" uid="uid://cysarud2wp245" path="res://art/joe/Joe front.png" id="6_3e35i"]
+
+[node name="TextBox" type="MarginContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_1r66o")
+
+[node name="LetterDisplayTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -48.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0, 0, 0, 0.741176)
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -78.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("5_tus3k")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("4_m0uob")
+theme_override_font_sizes/font_size = 9
+text = "Text"
+vertical_alignment = 1
+
+[node name="IRLANORMAL" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(278, 144)
+scale = Vector2(0.13, 0.139)
+texture = ExtResource("3_xq4ya")
+
+[node name="BREEFNORMAL" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(278, 144)
+scale = Vector2(0.2, 0.214)
+texture = ExtResource("4_4wxee")
+
+[node name="JOENORMAL" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(264.6, 107.483)
+scale = Vector2(0.149451, 0.142329)
+texture = ExtResource("6_3e35i")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_0epuj")
+volume_db = -5.943

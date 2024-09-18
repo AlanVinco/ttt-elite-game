@@ -1,0 +1,66 @@
+[gd_scene load_steps=8 format=3 uid="uid://ch7wju7tru14b"]
+
+[ext_resource type="PackedScene" uid="uid://de2s36o03gu7l" path="res://scenes/text_box.tscn" id="1_p2a4c"]
+[ext_resource type="Script" path="res://scenes/test.gd" id="1_q0njy"]
+[ext_resource type="Texture2D" uid="uid://b157ogfrbmaut" path="res://art/bg/kof13-southtown-stage.jpg" id="2_q3wxe"]
+[ext_resource type="PackedScene" uid="uid://bpcs5g3fijv0l" path="res://scenes/player.tscn" id="3_3fql0"]
+[ext_resource type="PackedScene" uid="uid://u2e6yaiphjic" path="res://scenes/irla_player.tscn" id="5_do51k"]
+[ext_resource type="Texture2D" uid="uid://bwiwms7ffslb2" path="res://art/irla/face/irla-draw-normal-face-shadow.png" id="6_3c7tf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yfuda"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_q0njy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(100.25, 257)
+scale = Vector2(0.769637, 0.407725)
+texture = ExtResource("2_q3wxe")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.28485, 0.28485, 0.28485, 1)
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="TextBox" parent="." instance=ExtResource("1_p2a4c")]
+offset_left = 70.0
+offset_top = 182.0
+offset_right = 110.0
+offset_bottom = 222.0
+
+[node name="irla_player" parent="." instance=ExtResource("5_do51k")]
+position = Vector2(81, 283)
+
+[node name="player" parent="." instance=ExtResource("3_3fql0")]
+position = Vector2(155, 289)
+
+[node name="Camera2D2" type="Camera2D" parent="player"]
+visible = false
+position = Vector2(-8, -75)
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(0, 1)
+amount = 10000
+local_coords = true
+emission_shape = 3
+emission_rect_extents = Vector2(1000, 1)
+initial_velocity_min = 20.0
+initial_velocity_max = 200.0
+color = Color(0.691357, 0.691357, 0.691357, 1)
+
+[node name="limit" type="Area2D" parent="."]
+position = Vector2(512, 156)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="limit"]
+shape = SubResource("RectangleShape2D_yfuda")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(267, 307)
+scale = Vector2(0.170417, 0.171562)
+texture = ExtResource("6_3c7tf")
+
+[editable path="TextBox"]

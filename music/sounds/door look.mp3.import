@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b46gqh1nlwoms"
+path="res://.godot/imported/door look.mp3-1e8db72a3d60fea80f9fb89dcab1a247.mp3str"
+
+[deps]
+
+source_file="res://music/sounds/door look.mp3"
+dest_files=["res://.godot/imported/door look.mp3-1e8db72a3d60fea80f9fb89dcab1a247.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

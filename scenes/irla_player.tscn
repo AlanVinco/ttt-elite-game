@@ -1,0 +1,361 @@
+[gd_scene load_steps=30 format=3 uid="uid://u2e6yaiphjic"]
+
+[ext_resource type="Script" path="res://scenes/characters/irla_player.gd" id="1_uy5eh"]
+[ext_resource type="Texture2D" uid="uid://bm8g7ksus7p54" path="res://art/irla/irla-sprite-idle-2.png" id="1_wb7sg"]
+[ext_resource type="Texture2D" uid="uid://dk8onqyrds1cv" path="res://art/irla/irla_walk.png" id="3_7i6ck"]
+[ext_resource type="FontFile" uid="uid://btpd2d0e87gb1" path="res://art/fonts/m6x11.ttf" id="4_5i4vl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oh3h7"]
+atlas = ExtResource("1_wb7sg")
+region = Rect2(0, 0, 46, 115)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n8q1x"]
+atlas = ExtResource("1_wb7sg")
+region = Rect2(46, 0, 46, 115)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2dn6p"]
+atlas = ExtResource("1_wb7sg")
+region = Rect2(92, 0, 46, 115)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_17ywi"]
+atlas = ExtResource("1_wb7sg")
+region = Rect2(138, 0, 46, 115)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2w7yt"]
+atlas = ExtResource("1_wb7sg")
+region = Rect2(184, 0, 46, 115)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2vdqr"]
+atlas = ExtResource("1_wb7sg")
+region = Rect2(230, 0, 46, 115)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bdpjk"]
+atlas = ExtResource("1_wb7sg")
+region = Rect2(276, 0, 46, 115)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhacg"]
+atlas = ExtResource("1_wb7sg")
+region = Rect2(322, 0, 46, 115)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jtq7f"]
+atlas = ExtResource("1_wb7sg")
+region = Rect2(368, 0, 46, 115)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5vb58"]
+atlas = ExtResource("1_wb7sg")
+region = Rect2(414, 0, 46, 115)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iihhf"]
+atlas = ExtResource("1_wb7sg")
+region = Rect2(460, 0, 46, 115)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pw3yt"]
+atlas = ExtResource("3_7i6ck")
+region = Rect2(0, 0, 79, 115)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_06dvs"]
+atlas = ExtResource("3_7i6ck")
+region = Rect2(79, 0, 79, 115)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ws4vb"]
+atlas = ExtResource("3_7i6ck")
+region = Rect2(158, 0, 79, 115)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fggu2"]
+atlas = ExtResource("3_7i6ck")
+region = Rect2(237, 0, 79, 115)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_34nf2"]
+atlas = ExtResource("3_7i6ck")
+region = Rect2(316, 0, 79, 115)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gmsx7"]
+atlas = ExtResource("3_7i6ck")
+region = Rect2(395, 0, 79, 115)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k1hi6"]
+atlas = ExtResource("3_7i6ck")
+region = Rect2(474, 0, 79, 115)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7nge7"]
+atlas = ExtResource("3_7i6ck")
+region = Rect2(553, 0, 79, 115)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tjrmi"]
+atlas = ExtResource("3_7i6ck")
+region = Rect2(632, 0, 79, 115)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hq0yf"]
+atlas = ExtResource("3_7i6ck")
+region = Rect2(711, 0, 79, 115)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ct2ht"]
+atlas = ExtResource("3_7i6ck")
+region = Rect2(790, 0, 79, 115)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qddlw"]
+atlas = ExtResource("3_7i6ck")
+region = Rect2(869, 0, 79, 115)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bdwy0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oh3h7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n8q1x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2dn6p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_17ywi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2w7yt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2vdqr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bdpjk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qhacg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jtq7f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5vb58")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iihhf")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pw3yt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_06dvs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ws4vb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fggu2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_34nf2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gmsx7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k1hi6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7nge7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tjrmi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hq0yf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ct2ht")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qddlw")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 12.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0sxa8"]
+radius = 32.0
+height = 112.0
+
+[node name="irla_player" type="CharacterBody2D" groups=["irla_group", "woman_group"]]
+script = ExtResource("1_uy5eh")
+velocidad = 100.0
+character = "IRLA"
+difficulty = "easy"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_bdwy0")
+animation = &"idle"
+frame = 5
+frame_progress = 0.221449
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_0sxa8")
+
+[node name="ButtonOptions" type="Button" parent="."]
+visible = false
+z_index = 1
+offset_left = 12.0
+offset_top = -46.0
+offset_right = 20.0
+offset_bottom = -38.0
+theme_override_fonts/font = ExtResource("4_5i4vl")
+theme_override_font_sizes/font_size = 8
+text = "Hablar"
+
+[node name="PanelOptions" type="Panel" parent="."]
+visible = false
+z_index = 2
+offset_left = 18.0
+offset_top = -47.0
+offset_right = 64.0
+offset_bottom = 21.0
+
+[node name="ButtonTalk" type="Button" parent="PanelOptions"]
+z_index = 1
+layout_mode = 0
+offset_right = 46.0
+offset_bottom = 16.0
+theme_override_fonts/font = ExtResource("4_5i4vl")
+theme_override_font_sizes/font_size = 8
+disabled = true
+text = "Preguntar"
+
+[node name="ButtonFight" type="Button" parent="PanelOptions"]
+layout_mode = 0
+offset_top = 17.0
+offset_right = 46.0
+offset_bottom = 33.0
+theme_override_fonts/font = ExtResource("4_5i4vl")
+theme_override_font_sizes/font_size = 8
+text = "Desafiar"
+
+[node name="ButtonPunishment" type="Button" parent="PanelOptions"]
+layout_mode = 0
+offset_top = 34.0
+offset_right = 46.0
+offset_bottom = 50.0
+theme_override_fonts/font = ExtResource("4_5i4vl")
+theme_override_font_sizes/font_size = 8
+disabled = true
+text = "Castigo"
+
+[node name="ButtonInfo" type="Button" parent="PanelOptions"]
+layout_mode = 0
+offset_top = 51.0
+offset_right = 42.0
+offset_bottom = 67.0
+theme_override_fonts/font = ExtResource("4_5i4vl")
+theme_override_font_sizes/font_size = 8
+disabled = true
+text = "Informacion"
+
+[node name="PanelFight" type="Panel" parent="."]
+visible = false
+z_index = 3
+offset_left = 18.0
+offset_top = -47.0
+offset_right = 64.0
+offset_bottom = 4.0
+
+[node name="ButtonReputation" type="Button" parent="PanelFight"]
+z_index = 1
+layout_mode = 0
+offset_right = 46.0
+offset_bottom = 16.0
+theme_override_fonts/font = ExtResource("4_5i4vl")
+theme_override_font_sizes/font_size = 8
+text = "Reputacion"
+
+[node name="ButtonMoney" type="Button" parent="PanelFight"]
+layout_mode = 0
+offset_top = 17.0
+offset_right = 46.0
+offset_bottom = 33.0
+theme_override_fonts/font = ExtResource("4_5i4vl")
+theme_override_font_sizes/font_size = 8
+text = "Dinero"
+
+[node name="ButtonBack" type="Button" parent="PanelFight"]
+layout_mode = 0
+offset_top = 34.0
+offset_right = 46.0
+offset_bottom = 50.0
+theme_override_fonts/font = ExtResource("4_5i4vl")
+theme_override_font_sizes/font_size = 8
+text = "Regresar"
+
+[node name="PanelRounds" type="Panel" parent="."]
+visible = false
+z_index = 4
+offset_left = 18.0
+offset_top = -47.0
+offset_right = 64.0
+offset_bottom = 21.0
+
+[node name="ButtonVs3" type="Button" parent="PanelRounds"]
+z_index = 1
+layout_mode = 0
+offset_right = 46.0
+offset_bottom = 16.0
+theme_override_fonts/font = ExtResource("4_5i4vl")
+theme_override_font_sizes/font_size = 8
+text = "3 Rondas"
+
+[node name="ButtonVs5" type="Button" parent="PanelRounds"]
+layout_mode = 0
+offset_top = 17.0
+offset_right = 46.0
+offset_bottom = 33.0
+theme_override_fonts/font = ExtResource("4_5i4vl")
+theme_override_font_sizes/font_size = 8
+text = "5 Rondas"
+
+[node name="ButtonVs10" type="Button" parent="PanelRounds"]
+layout_mode = 0
+offset_top = 34.0
+offset_right = 46.0
+offset_bottom = 50.0
+theme_override_fonts/font = ExtResource("4_5i4vl")
+theme_override_font_sizes/font_size = 8
+text = "10 Rondas"
+
+[node name="ButtonBack2" type="Button" parent="PanelRounds"]
+layout_mode = 0
+offset_top = 51.0
+offset_right = 46.0
+offset_bottom = 67.0
+theme_override_fonts/font = ExtResource("4_5i4vl")
+theme_override_font_sizes/font_size = 8
+text = "Regresar"
+
+[node name="Label" type="Label" parent="."]
+offset_left = -69.0
+offset_top = -55.0
+offset_right = -29.0
+offset_bottom = -32.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_5i4vl")
+theme_override_font_sizes/font_size = 8
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="pressed" from="ButtonOptions" to="." method="_on_button_options_pressed"]
+[connection signal="pressed" from="PanelOptions/ButtonFight" to="." method="_on_button_fight_pressed"]
+[connection signal="pressed" from="PanelFight/ButtonReputation" to="." method="_on_button_reputation_pressed"]
+[connection signal="pressed" from="PanelFight/ButtonMoney" to="." method="_on_button_money_pressed"]
+[connection signal="pressed" from="PanelFight/ButtonBack" to="." method="_on_button_back_pressed"]
+[connection signal="pressed" from="PanelRounds/ButtonVs3" to="." method="_on_button_vs_3_pressed"]
+[connection signal="pressed" from="PanelRounds/ButtonVs5" to="." method="_on_button_vs_5_pressed"]
+[connection signal="pressed" from="PanelRounds/ButtonVs10" to="." method="_on_button_vs_10_pressed"]
+[connection signal="pressed" from="PanelRounds/ButtonBack2" to="." method="_on_button_back_2_pressed"]

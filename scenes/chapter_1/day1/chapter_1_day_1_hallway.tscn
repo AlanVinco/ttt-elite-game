@@ -1,0 +1,149 @@
+[gd_scene load_steps=13 format=3 uid="uid://bxqq6gngo61b7"]
+
+[ext_resource type="Script" path="res://script/chapter_1/day1/chapter_1_day_1_hallway.gd" id="1_3h0ct"]
+[ext_resource type="PackedScene" uid="uid://d2uj58m770r6r" path="res://scenes/chapter_1/day1/chapter_1_day_1_bathroom.tscn" id="2_f7jft"]
+[ext_resource type="PackedScene" uid="uid://b1esxukm80kj2" path="res://scenes/window_dialogue_final.tscn" id="2_seuhp"]
+[ext_resource type="Texture2D" uid="uid://cqs8vg5yf8drr" path="res://art/bg/pasillo.png" id="3_ryavs"]
+[ext_resource type="PackedScene" uid="uid://u2e6yaiphjic" path="res://scenes/irla_player.tscn" id="3_vdged"]
+[ext_resource type="FontFile" uid="uid://btpd2d0e87gb1" path="res://art/fonts/m6x11.ttf" id="4_6vons"]
+[ext_resource type="PackedScene" uid="uid://bpcs5g3fijv0l" path="res://scenes/player.tscn" id="5_l5w4q"]
+[ext_resource type="AudioStream" uid="uid://dyae68qqeijxv" path="res://music/sounds/Students sounds.mp3" id="6_e5fwy"]
+[ext_resource type="Texture2D" uid="uid://bx21bc186e8hs" path="res://art/joe/Perver Joe.png" id="7_c7kri"]
+[ext_resource type="PackedScene" uid="uid://dpl6yr04nxcg8" path="res://scenes/HUD/hud.tscn" id="8_2g48l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vjfup"]
+size = Vector2(72, 112)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7mgv1"]
+size = Vector2(10, 130)
+
+[node name="chapter1Day1Hallway" type="Node2D"]
+script = ExtResource("1_3h0ct")
+next_scene = ExtResource("2_f7jft")
+TextScene = ExtResource("2_seuhp")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -744.0
+offset_top = 144.0
+offset_right = -653.0
+offset_bottom = 184.0
+scale = Vector2(16.68, 1)
+color = Color(0.4, 0.207843, 0.054902, 1)
+
+[node name="BgHallway" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(8, 64)
+texture = ExtResource("3_ryavs")
+
+[node name="Pervert Joe" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-616, 122)
+texture = ExtResource("7_c7kri")
+
+[node name="Area2D" type="Area2D" parent="Pervert Joe"]
+z_index = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pervert Joe/Area2D"]
+position = Vector2(4, -2)
+shape = SubResource("RectangleShape2D_vjfup")
+
+[node name="irla_player" parent="." instance=ExtResource("3_vdged")]
+visible = false
+position = Vector2(136, 120)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+
+[node name="player" parent="." instance=ExtResource("5_l5w4q")]
+position = Vector2(131, 127)
+
+[node name="Button" type="Button" parent="."]
+visible = false
+z_index = 3
+texture_filter = 1
+offset_left = -592.0
+offset_top = 65.0
+offset_right = -572.0
+offset_bottom = 81.0
+theme_override_fonts/font = ExtResource("4_6vons")
+theme_override_font_sizes/font_size = 8
+text = "Talk"
+
+[node name="Classroom sounds" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_e5fwy")
+volume_db = -30.254
+autoplay = true
+parameters/looping = true
+
+[node name="HUD" parent="." instance=ExtResource("8_2g48l")]
+
+[node name="womanBathroom" type="Area2D" parent="."]
+position = Vector2(-544, 160)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="womanBathroom"]
+position = Vector2(29, -56)
+shape = SubResource("RectangleShape2D_7mgv1")
+
+[node name="BahtroomButton" type="Button" parent="womanBathroom"]
+visible = false
+texture_filter = 1
+offset_left = -16.0
+offset_top = -120.0
+offset_right = 13.0
+offset_bottom = -104.0
+theme_override_fonts/font = ExtResource("4_6vons")
+theme_override_font_sizes/font_size = 8
+text = "Entrar"
+
+[node name="CanvasOptions" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="CanvasOptions"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.6)
+
+[node name="ButtonAcept" type="Button" parent="CanvasOptions/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -14.0
+offset_top = -15.0
+offset_right = 15.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_6vons")
+theme_override_font_sizes/font_size = 8
+text = "Accept"
+
+[node name="ButtonDecline" type="Button" parent="CanvasOptions/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 34.0
+offset_top = -15.0
+offset_right = 67.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_6vons")
+theme_override_font_sizes/font_size = 8
+text = "Decline"
+
+[connection signal="body_entered" from="Pervert Joe/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Pervert Joe/Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="body_entered" from="womanBathroom" to="." method="_on_woman_bathroom_body_entered"]
+[connection signal="body_exited" from="womanBathroom" to="." method="_on_woman_bathroom_body_exited"]
+[connection signal="pressed" from="womanBathroom/BahtroomButton" to="." method="_on_bahtroom_button_pressed"]
+[connection signal="pressed" from="CanvasOptions/ColorRect/ButtonAcept" to="." method="_on_button_acept_pressed"]
+[connection signal="pressed" from="CanvasOptions/ColorRect/ButtonDecline" to="." method="_on_button_decline_pressed"]

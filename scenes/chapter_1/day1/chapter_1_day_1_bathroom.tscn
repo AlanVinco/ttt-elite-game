@@ -1,0 +1,107 @@
+[gd_scene load_steps=8 format=3 uid="uid://d2uj58m770r6r"]
+
+[ext_resource type="Texture2D" uid="uid://bj5od88cb781e" path="res://art/bg/bathroom.png" id="1_6sne7"]
+[ext_resource type="Script" path="res://script/chapter_1/day1/chapter_1_day_1_bathroom.gd" id="1_723nc"]
+[ext_resource type="PackedScene" uid="uid://u2e6yaiphjic" path="res://scenes/irla_player.tscn" id="2_3wfmj"]
+[ext_resource type="PackedScene" uid="uid://bpcs5g3fijv0l" path="res://scenes/player.tscn" id="3_sl3ac"]
+[ext_resource type="PackedScene" uid="uid://dpl6yr04nxcg8" path="res://scenes/HUD/hud.tscn" id="4_kacmj"]
+[ext_resource type="FontFile" uid="uid://btpd2d0e87gb1" path="res://art/fonts/m6x11.ttf" id="5_bsl62"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_akjjx"]
+size = Vector2(20, 82)
+
+[node name="chapter1Day1Bathroom" type="Node2D"]
+script = ExtResource("1_723nc")
+
+[node name="Bathroom" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(300, 91)
+texture = ExtResource("1_6sne7")
+
+[node name="irla_player" parent="." instance=ExtResource("2_3wfmj")]
+visible = false
+position = Vector2(136, 120)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+
+[node name="player" parent="." instance=ExtResource("3_sl3ac")]
+position = Vector2(131, 127)
+
+[node name="HUD" parent="." instance=ExtResource("4_kacmj")]
+
+[node name="CanvasOptions" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="CanvasOptions"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.6)
+
+[node name="ButtonAcept" type="Button" parent="CanvasOptions/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -14.0
+offset_top = -15.0
+offset_right = 15.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_bsl62")
+theme_override_font_sizes/font_size = 8
+text = "Accept"
+
+[node name="ButtonDecline" type="Button" parent="CanvasOptions/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 34.0
+offset_top = -15.0
+offset_right = 67.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_bsl62")
+theme_override_font_sizes/font_size = 8
+text = "Decline"
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(336, 104)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 31)
+shape = SubResource("RectangleShape2D_akjjx")
+
+[node name="ButtonEspiar" type="Button" parent="Area2D"]
+visible = false
+offset_left = -16.0
+offset_top = -40.0
+offset_right = 16.0
+offset_bottom = -24.0
+theme_override_fonts/font = ExtResource("5_bsl62")
+theme_override_font_sizes/font_size = 8
+text = "Espiar"
+
+[node name="ButtonEntrar" type="Button" parent="Area2D"]
+visible = false
+offset_left = -16.0
+offset_top = -8.0
+offset_right = 13.0
+offset_bottom = 8.0
+theme_override_fonts/font = ExtResource("5_bsl62")
+theme_override_font_sizes/font_size = 8
+text = "Entrar"
+
+[connection signal="pressed" from="CanvasOptions/ColorRect/ButtonAcept" to="." method="_on_button_acept_pressed"]
+[connection signal="pressed" from="CanvasOptions/ColorRect/ButtonDecline" to="." method="_on_button_decline_pressed"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

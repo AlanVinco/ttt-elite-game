@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://de2s36o03gu7l"]
+
+[ext_resource type="Script" path="res://script/text_box.gd" id="1_dwhdx"]
+[ext_resource type="Texture2D" uid="uid://cjpvpk2eju70y" path="res://art/textbox/textBox.png" id="2_cdnst"]
+[ext_resource type="Texture2D" uid="uid://ddwkjsiwsg737" path="res://art/ui/textBox2.png" id="2_m48cd"]
+[ext_resource type="FontFile" uid="uid://btpd2d0e87gb1" path="res://art/fonts/m6x11.ttf" id="3_e7yam"]
+
+[node name="TextBox" type="MarginContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_dwhdx")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+visible = false
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("2_m48cd")
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="."]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("2_cdnst")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Label" type="Label" parent="MarginContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_e7yam")
+theme_override_font_sizes/font_size = 9
+vertical_alignment = 1
+
+[node name="LetterDisplayTimer" type="Timer" parent="."]
+one_shot = true

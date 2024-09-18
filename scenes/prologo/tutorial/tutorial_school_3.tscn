@@ -1,0 +1,129 @@
+[gd_scene load_steps=11 format=3 uid="uid://clpp2k1nsp13l"]
+
+[ext_resource type="Script" path="res://scenes/prologo/tutorial/tutorial_school_3.gd" id="1_uxtyr"]
+[ext_resource type="Texture2D" uid="uid://mntvots7248s" path="res://art/cutscenes/classroom.png" id="1_yugnb"]
+[ext_resource type="Texture2D" uid="uid://d0xcd1ue2ncci" path="res://art/cutscenes/player-no-shadow-1.png" id="2_m1ryt"]
+[ext_resource type="Texture2D" uid="uid://lvrc07ckydm1" path="res://art/cutscenes/school.png" id="2_nqq5e"]
+[ext_resource type="Texture2D" uid="uid://dlwn25pu5nlsl" path="res://art/cutscenes/intro-angry.png" id="2_xdywr"]
+[ext_resource type="FontFile" uid="uid://btpd2d0e87gb1" path="res://art/fonts/m6x11.ttf" id="4_qcwyt"]
+[ext_resource type="AudioStream" uid="uid://cufyqyi3k5a32" path="res://music/GANTZ THEME.mp3" id="7_0jmx3"]
+
+[sub_resource type="Animation" id="Animation_o5v3v"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_h3m43"]
+resource_name = "transition"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u11pa"]
+_data = {
+"RESET": SubResource("Animation_o5v3v"),
+"transition": SubResource("Animation_h3m43")
+}
+
+[node name="tutorialSchool3" type="Node"]
+script = ExtResource("1_uxtyr")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="bg3" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_xdywr")
+expand_mode = 1
+
+[node name="bg2" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_nqq5e")
+expand_mode = 1
+
+[node name="bg1" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_yugnb")
+expand_mode = 1
+
+[node name="player" type="Sprite2D" parent="."]
+position = Vector2(155, 125)
+scale = Vector2(0.135, 0.132188)
+texture = ExtResource("2_m1ryt")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+texture_filter = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -31.0
+offset_right = 56.0
+offset_bottom = -8.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("4_qcwyt")
+theme_override_font_sizes/font_size = 10
+
+[node name="Label2" type="Label" parent="CanvasLayer"]
+texture_filter = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = -39.0
+offset_right = 72.0
+offset_bottom = -16.0
+grow_vertical = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_qcwyt")
+theme_override_font_sizes/font_size = 10
+
+[node name="transition" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_u11pa")
+}
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0, 0, 0, 1)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_0jmx3")
+parameters/looping = true

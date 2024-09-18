@@ -1,0 +1,68 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpl6yr04nxcg8"]
+
+[ext_resource type="Script" path="res://script/HUD/hud.gd" id="1_wjp67"]
+[ext_resource type="FontFile" uid="uid://btpd2d0e87gb1" path="res://art/fonts/m6x11.ttf" id="2_megso"]
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wjp67")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LabelTime" type="Label" parent="CanvasLayer/TextureRect"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 11.0
+offset_right = 48.0
+offset_bottom = 34.0
+theme_override_fonts/font = ExtResource("2_megso")
+theme_override_font_sizes/font_size = 8
+text = "time"
+
+[node name="Button" type="Button" parent="CanvasLayer/TextureRect/LabelTime"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = -7.0
+offset_right = 31.0
+offset_bottom = 9.0
+theme_override_fonts/font = ExtResource("2_megso")
+theme_override_font_sizes/font_size = 8
+text = "+"
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+
+[node name="LabelMoney" type="Label" parent="CanvasLayer/TextureRect2"]
+layout_mode = 0
+offset_left = -18.0
+offset_top = 11.0
+offset_right = 22.0
+offset_bottom = 34.0
+theme_override_fonts/font = ExtResource("2_megso")
+theme_override_font_sizes/font_size = 8
+text = "money"
+
+[node name="LabelKeys" type="Label" parent="CanvasLayer"]
+offset_left = 53.0
+offset_top = 11.0
+offset_right = 93.0
+offset_bottom = 34.0
+theme_override_fonts/font = ExtResource("2_megso")
+theme_override_font_sizes/font_size = 8
+text = "keys"
+
+[connection signal="pressed" from="CanvasLayer/TextureRect/LabelTime/Button" to="." method="_on_button_pressed"]
