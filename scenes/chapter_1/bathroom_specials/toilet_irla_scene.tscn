@@ -1,0 +1,171 @@
+[gd_scene load_steps=26 format=3 uid="uid://slcl7kp6m6ee"]
+
+[ext_resource type="Script" path="res://scenes/chapter_1/bathroom_specials/toilet_irla.gd" id="1_to2xg"]
+[ext_resource type="PackedScene" uid="uid://b1esxukm80kj2" path="res://scenes/window_dialogue_final.tscn" id="2_n0a48"]
+[ext_resource type="Texture2D" uid="uid://ccjns71tvdor2" path="res://art/bg/bathroom/toilet/toilet1.png" id="2_rii81"]
+[ext_resource type="PackedScene" uid="uid://u2e6yaiphjic" path="res://scenes/irla_player.tscn" id="2_xqevy"]
+[ext_resource type="PackedScene" uid="uid://dpl6yr04nxcg8" path="res://scenes/HUD/hud.tscn" id="4_3ysdf"]
+[ext_resource type="Texture2D" uid="uid://fr5rtooxoa34" path="res://art/irla/bathroom/irla-bath.png" id="4_mb25i"]
+[ext_resource type="Texture2D" uid="uid://c4luad3di2s50" path="res://art/player/animations/player_golpeado_no.color.png" id="6_yglf1"]
+[ext_resource type="Texture2D" uid="uid://dgpnswn050348" path="res://art/player/animations/player_golpeado-2.png" id="7_65c60"]
+[ext_resource type="Texture2D" uid="uid://gyrsj0tcisgs" path="res://art/player/player-idle.png" id="8_eknlj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l1tm3"]
+atlas = ExtResource("6_yglf1")
+region = Rect2(0, 0, 116, 101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_72r1w"]
+atlas = ExtResource("6_yglf1")
+region = Rect2(116, 0, 116, 101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ukv1a"]
+atlas = ExtResource("6_yglf1")
+region = Rect2(232, 0, 116, 101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k18nv"]
+atlas = ExtResource("6_yglf1")
+region = Rect2(348, 0, 116, 101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ouu0n"]
+atlas = ExtResource("7_65c60")
+region = Rect2(0, 0, 109, 106)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cjp1v"]
+atlas = ExtResource("7_65c60")
+region = Rect2(109, 0, 109, 106)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l3wgc"]
+atlas = ExtResource("7_65c60")
+region = Rect2(218, 0, 109, 106)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xmf0e"]
+atlas = ExtResource("7_65c60")
+region = Rect2(327, 0, 109, 106)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x1n8t"]
+atlas = ExtResource("8_eknlj")
+region = Rect2(0, 0, 65, 104)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yr4ku"]
+atlas = ExtResource("8_eknlj")
+region = Rect2(65, 0, 65, 104)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uwr6m"]
+atlas = ExtResource("8_eknlj")
+region = Rect2(130, 0, 65, 104)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_78dpd"]
+atlas = ExtResource("8_eknlj")
+region = Rect2(195, 0, 65, 104)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ruq7b"]
+atlas = ExtResource("8_eknlj")
+region = Rect2(260, 0, 65, 104)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mpfe8"]
+atlas = ExtResource("8_eknlj")
+region = Rect2(325, 0, 65, 104)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7xbxt"]
+atlas = ExtResource("8_eknlj")
+region = Rect2(390, 0, 65, 104)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0aeqv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l1tm3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_72r1w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ukv1a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k18nv")
+}],
+"loop": false,
+"name": &"golpeado1",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ouu0n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cjp1v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l3wgc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xmf0e")
+}],
+"loop": true,
+"name": &"golpeado2",
+"speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x1n8t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yr4ku")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uwr6m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_78dpd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ruq7b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mpfe8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7xbxt")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 9.0
+}]
+
+[node name="toilet_irla_scene" type="Node2D"]
+script = ExtResource("1_to2xg")
+TextScene = ExtResource("2_n0a48")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -544.0
+offset_top = -344.0
+offset_right = 768.0
+offset_bottom = 472.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0, 0, 0, 1)
+
+[node name="Bathroom" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(174, 88)
+texture = ExtResource("2_rii81")
+
+[node name="irla_player" parent="Bathroom" instance=ExtResource("2_xqevy")]
+visible = false
+position = Vector2(26, 34)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+
+[node name="PlayerAnimations" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(124, 125)
+sprite_frames = SubResource("SpriteFrames_0aeqv")
+animation = &"idle"
+
+[node name="Irla-bath" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(183, 113)
+texture = ExtResource("4_mb25i")
+
+[node name="HUD" parent="." instance=ExtResource("4_3ysdf")]

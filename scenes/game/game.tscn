@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://nd504s7qkict" path="res://scenes/game/circle.tscn" id="2_lqbx8"]
 [ext_resource type="PackedScene" uid="uid://cc1l4j6ds8l2p" path="res://scenes/game/cross.tscn" id="3_w7swk"]
 [ext_resource type="Texture2D" uid="uid://bp206gfcrxfdo" path="res://art/tic tac toe/bg-game.png" id="5_p84lv"]
-[ext_resource type="Texture2D" uid="uid://n42gholfmscx" path="res://art/breef/front/breef_test_1.png" id="7_is8f1"]
+[ext_resource type="Texture2D" uid="uid://bwfjjvpy84s0b" path="res://art/breef/front/breef-front.png" id="7_2ikm0"]
 [ext_resource type="Texture2D" uid="uid://c8y6jhtwmpdo2" path="res://art/tic tac toe/grid.png" id="7_wdavn"]
 [ext_resource type="FontFile" uid="uid://btpd2d0e87gb1" path="res://art/fonts/m6x11.ttf" id="8_ipdck"]
 [ext_resource type="Texture2D" uid="uid://cysarud2wp245" path="res://art/joe/Joe front.png" id="8_n2507"]
@@ -135,16 +135,15 @@ texture = ExtResource("8_tb7bd")
 
 [node name="breef" type="Sprite2D" parent="."]
 visible = false
-texture_filter = 1
-position = Vector2(277, 144)
-scale = Vector2(0.348118, 0.342503)
-texture = ExtResource("7_is8f1")
+position = Vector2(254, 95)
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("7_2ikm0")
 
 [node name="joe" type="Sprite2D" parent="."]
 visible = false
 texture_filter = 1
-position = Vector2(244, 83)
-scale = Vector2(0.165817, 0.209524)
+position = Vector2(267.046, 83)
+scale = Vector2(0.211909, 0.209524)
 texture = ExtResource("8_n2507")
 
 [node name="Camera2D" type="Camera2D" parent="."]

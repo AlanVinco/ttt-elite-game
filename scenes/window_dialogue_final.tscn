@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://b1esxukm80kj2"]
+[gd_scene load_steps=9 format=3 uid="uid://b1esxukm80kj2"]
 
 [ext_resource type="Script" path="res://scenes/window_dialogue_final.gd" id="1_1r66o"]
 [ext_resource type="Texture2D" uid="uid://bwiwms7ffslb2" path="res://art/irla/face/irla-draw-normal-face-shadow.png" id="3_xq4ya"]
-[ext_resource type="Texture2D" uid="uid://n42gholfmscx" path="res://art/breef/front/breef_test_1.png" id="4_4wxee"]
 [ext_resource type="FontFile" uid="uid://btpd2d0e87gb1" path="res://art/fonts/m6x11.ttf" id="4_m0uob"]
+[ext_resource type="Texture2D" uid="uid://bwfjjvpy84s0b" path="res://art/breef/front/breef-front.png" id="5_jgtqu"]
 [ext_resource type="Texture2D" uid="uid://rulg1rj7f27n" path="res://art/ui/black.png" id="5_tus3k"]
 [ext_resource type="AudioStream" uid="uid://b56dcmouu4nvd" path="res://music/sounds/talkFinal.mp3" id="6_0epuj"]
 [ext_resource type="Texture2D" uid="uid://cysarud2wp245" path="res://art/joe/Joe front.png" id="6_3e35i"]
+[ext_resource type="Texture2D" uid="uid://dph3pi6dwd0k7" path="res://art/player/front/player-front.png" id="7_nutca"]
 
 [node name="TextBox" type="MarginContainer"]
 offset_right = 40.0
@@ -74,15 +75,21 @@ texture = ExtResource("3_xq4ya")
 
 [node name="BREEFNORMAL" type="Sprite2D" parent="CanvasLayer"]
 visible = false
-position = Vector2(278, 144)
-scale = Vector2(0.2, 0.214)
-texture = ExtResource("4_4wxee")
+position = Vector2(273, 111)
+scale = Vector2(0.025, 0.028)
+texture = ExtResource("5_jgtqu")
 
 [node name="JOENORMAL" type="Sprite2D" parent="CanvasLayer"]
 visible = false
-position = Vector2(264.6, 107.483)
+position = Vector2(276.6, 107.483)
 scale = Vector2(0.149451, 0.142329)
 texture = ExtResource("6_3e35i")
+
+[node name="PLAYERNORMAL" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(43, 143)
+scale = Vector2(0.15, 0.168)
+texture = ExtResource("7_nutca")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_0epuj")

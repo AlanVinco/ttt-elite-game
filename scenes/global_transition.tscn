@@ -1,23 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bwtsh1udg6fl"]
+[gd_scene load_steps=9 format=3 uid="uid://bwtsh1udg6fl"]
 
 [ext_resource type="Script" path="res://script/global_transition.gd" id="1_grc56"]
 [ext_resource type="AudioStream" uid="uid://b46gqh1nlwoms" path="res://music/sounds/door look.mp3" id="2_41os5"]
 [ext_resource type="AudioStream" uid="uid://0onmnxnkuq8q" path="res://music/sounds/door open.mp3" id="3_yifdi"]
-
-[sub_resource type="Animation" id="Animation_8xtwx"]
-resource_name = "TRANSITION"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasModulate:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
-}
 
 [sub_resource type="Animation" id="Animation_83yy4"]
 length = 0.001
@@ -34,10 +19,58 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_8xtwx"]
+resource_name = "TRANSITION"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_dxog3"]
+resource_name = "TRANSITION_START"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ptkuq"]
+resource_name = "END_ACT_TUTORIAL"
+length = 3.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_k4lw7"]
 _data = {
+"END_ACT_TUTORIAL": SubResource("Animation_ptkuq"),
 "RESET": SubResource("Animation_83yy4"),
-"TRANSITION": SubResource("Animation_8xtwx")
+"TRANSITION": SubResource("Animation_8xtwx"),
+"TRANSITION_START": SubResource("Animation_dxog3")
 }
 
 [node name="globalTransition" type="Node"]

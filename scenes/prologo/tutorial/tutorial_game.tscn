@@ -161,20 +161,6 @@ expand_mode = 1
 
 [node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer"]
 
-[node name="bg" type="TextureRect" parent="."]
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -344.0
-offset_top = -224.0
-offset_right = 474.0
-offset_bottom = 262.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("4_tulrc")
-expand_mode = 1
-
 [node name="grid" type="TextureRect" parent="."]
 anchors_preset = 9
 anchor_bottom = 1.0

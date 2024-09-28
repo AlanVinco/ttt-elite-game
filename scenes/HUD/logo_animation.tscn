@@ -1,0 +1,85 @@
+[gd_scene load_steps=7 format=3 uid="uid://ballponcffr7u"]
+
+[ext_resource type="Texture2D" uid="uid://sbob1hvqu7tl" path="res://art/tic tac toe/logoTTT.png" id="1_4qvi7"]
+
+[sub_resource type="Gradient" id="Gradient_rk3ld"]
+offsets = PackedFloat32Array(0, 0.727273)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4d6s6"]
+gradient = SubResource("Gradient_rk3ld")
+fill = 1
+fill_from = Vector2(0.481651, 0.518349)
+
+[sub_resource type="Animation" id="Animation_y2tgu"]
+resource_name = "logo_animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.7, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [1.0, 2.87, 6.26, 11.08, 1.0, 6.46, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_lta67"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1055x"]
+_data = {
+"RESET": SubResource("Animation_lta67"),
+"logo_animation": SubResource("Animation_y2tgu")
+}
+
+[node name="LogoAnimation" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Logo" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 92.0
+offset_top = 31.0
+offset_right = 132.0
+offset_bottom = 71.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+texture = ExtResource("1_4qvi7")
+expand_mode = 1
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
+color = Color(0, 0, 0, 1)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(151, 94)
+scale = Vector2(0.257813, 0.246094)
+texture = SubResource("GradientTexture2D_4d6s6")
+texture_scale = 19.55
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_1055x")
+}

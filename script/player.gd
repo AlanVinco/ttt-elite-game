@@ -40,3 +40,9 @@ func _physics_process(delta: float) -> void:
 	
 #func stop_camera():
 	#$camara.
+
+#
+#func _ready() -> void:
+## Restaurar la posición cuando se carga la escena
+	#if GlobalTransition.player_position != Vector2():
+		#position = GlobalTransition.player_position

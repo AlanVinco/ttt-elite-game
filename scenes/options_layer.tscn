@@ -1,0 +1,125 @@
+[gd_scene load_steps=12 format=3 uid="uid://diw2dqt1tg40r"]
+
+[ext_resource type="Script" path="res://scenes/options_layer.gd" id="1_fk7v0"]
+[ext_resource type="Texture2D" uid="uid://cynu62lprm8k7" path="res://art/ui/options_bg.png" id="1_lorox"]
+[ext_resource type="Texture2D" uid="uid://bwiwms7ffslb2" path="res://art/irla/face/irla-draw-normal-face-shadow.png" id="3_faup5"]
+[ext_resource type="Texture2D" uid="uid://cysarud2wp245" path="res://art/joe/Joe front.png" id="4_iedk0"]
+[ext_resource type="FontFile" uid="uid://btpd2d0e87gb1" path="res://art/fonts/m6x11.ttf" id="4_kxsqw"]
+[ext_resource type="Texture2D" uid="uid://cqqeu2gng2o0c" path="res://art/ui/buttons-texture.png" id="4_ml3wy"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ju1ja"]
+texture = ExtResource("4_ml3wy")
+expand_margin_left = 20.0
+expand_margin_top = 10.0
+expand_margin_right = 20.0
+expand_margin_bottom = 20.0
+region_rect = Rect2(133, 43, 48, 28)
+modulate_color = Color(0.807244, 0, 0.203807, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7hk6e"]
+texture = ExtResource("4_ml3wy")
+expand_margin_left = 20.0
+expand_margin_top = 10.0
+expand_margin_right = 20.0
+expand_margin_bottom = 20.0
+region_rect = Rect2(133, 43, 48, 28)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_15feg"]
+texture = ExtResource("4_ml3wy")
+expand_margin_left = 20.0
+expand_margin_top = 10.0
+expand_margin_right = 20.0
+expand_margin_bottom = 20.0
+region_rect = Rect2(133, 43, 48, 28)
+modulate_color = Color(0.783523, 0.783523, 0.783523, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jvvqf"]
+texture = ExtResource("4_ml3wy")
+expand_margin_left = 20.0
+expand_margin_top = 10.0
+expand_margin_right = 20.0
+expand_margin_bottom = 20.0
+region_rect = Rect2(133, 43, 48, 28)
+modulate_color = Color(2.5028e-06, 0.717194, 0.776051, 1)
+
+[sub_resource type="Theme" id="Theme_mr42u"]
+default_font = ExtResource("4_kxsqw")
+default_font_size = 10
+Button/styles/focus = SubResource("StyleBoxTexture_ju1ja")
+Button/styles/hover = SubResource("StyleBoxTexture_7hk6e")
+Button/styles/normal = SubResource("StyleBoxTexture_15feg")
+Button/styles/pressed = SubResource("StyleBoxTexture_jvvqf")
+
+[node name="OptionsLayer" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_fk7v0")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_lorox")
+expand_mode = 1
+
+[node name="IRLANORMAL" type="TextureRect" parent="CanvasLayer"]
+visible = false
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -136.0
+offset_top = -74.0
+offset_right = 32.0
+offset_bottom = 150.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("3_faup5")
+expand_mode = 1
+
+[node name="JOE" type="TextureRect" parent="CanvasLayer"]
+visible = false
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -85.0
+offset_right = 13.0
+offset_bottom = 91.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("4_iedk0")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_mr42u")
+theme_override_constants/separation = 40
+
+[node name="Button" type="Button" parent="CanvasLayer/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "texto"
+
+[node name="Button2" type="Button" parent="CanvasLayer/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "texto2"

@@ -5,7 +5,6 @@ extends Node
 
 @export var TextScene : PackedScene
 
-
 var player: int
 var grid_data: Array
 var board_size: int
@@ -34,9 +33,9 @@ var dialogs = [
 
 func _ready():
 	MusicManager.music_player.play()
-	
 	$transition.visible = true
 	$AnimationPlayer.play("transition")
+	GlobalTransition.transition_start()
 	await get_tree().create_timer(1.0).timeout
 	
 	create_text(dialogs)
@@ -312,6 +311,7 @@ func acto_1():
 	Acto += 1
 
 func acto_2():
+	start_shake()
 	await get_tree().create_timer(2.0).timeout
 	var dialogs_2 = ["JAJAJAJ","Joder, que malo eres!", "No das ni una!", "Lárgate de mi vista!"]
 	create_text(dialogs_2)
@@ -320,8 +320,32 @@ func end_act_2():
 	$transition.visible = true
 	#await get_tree().create_timer(1.0).timeout
 	$AnimationPlayer.play("end_act")
+	GlobalTransition.transition_end()
 	
 func _add_a_scene_manually():
 	# This is like autoloading the scene, only
 	MusicManager.music_player["parameters/switch_to_clip"] = "IRLA MAIN"
 	get_tree().change_scene_to_file(next_scene)
+
+#TEMBLOR
+func shake_node_contents():
+	var shake_magnitude = 10
+
+	# Asume que el nodo tiene hijos
+	for child in get_children():
+		if child is Node2D:  # Si los hijos son nodos que se pueden mover
+			var original_position = child.position
+			var shake_offset = Vector2(randf_range(-shake_magnitude, shake_magnitude), randf_range(-shake_magnitude, shake_magnitude))
+			child.position = original_position + shake_offset
+			await get_tree().create_timer(0.05).timeout
+			child.position = original_position
+
+func start_shake():
+	await get_tree().create_timer(1.0).timeout
+	shake_node_contents()
+	await get_tree().create_timer(0.5).timeout
+	shake_node_contents()
+	await get_tree().create_timer(0.5).timeout
+	shake_node_contents()
+	await get_tree().create_timer(0.5).timeout
+	shake_node_contents()

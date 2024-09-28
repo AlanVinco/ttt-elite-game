@@ -15,6 +15,9 @@ var dialogs = []
 
 @export var door_bathroom = false
 
+@onready var opciones_scene = preload("res://scenes/options_layer.tscn")
+var opciones_instance
+
 func _ready() -> void:
 	ReputationManager.register_npc("JOE")
 
@@ -83,8 +86,8 @@ func create_text(texto, character, emotion) -> void:
 func _on_all_texts_displayed():
 	player.move = true
 	if check_irla_action == "IN BATHROOM":
-		$CanvasOptions.visible = true
-		print("Modal de pelea")
+		var nombres = ["Acept", "Decline",]
+		mostrar_opciones(nombres, "JOE")
 
 
 func _on_woman_bathroom_body_entered(body: Node2D) -> void:
@@ -97,7 +100,7 @@ func _on_woman_bathroom_body_exited(body: Node2D) -> void:
 
 func _on_bahtroom_button_pressed() -> void:
 	$womanBathroom/BahtroomButton.visible = false
-	if GlobalItems.KEYS == 1:
+	if GlobalItems.KEYS >= 1:
 		door_bathroom = true
 		
 	if door_bathroom == true:
@@ -117,3 +120,40 @@ func _on_button_acept_pressed() -> void:
 
 func _on_button_decline_pressed() -> void:
 	$CanvasOptions.visible = false
+
+
+#OPCIONES 
+
+# Función para generar botones en la escena de opciones con nombres personalizados
+func mostrar_opciones(nombres_botones: Array, npc):
+	opciones_instance = opciones_scene.instantiate()
+	add_child(opciones_instance)
+	
+	# Pasar la lista de nombres de los botones a la escena de opciones
+	opciones_instance.generar_botones(nombres_botones, npc)
+	
+	# Conectar la señal que emitirá la escena Opciones
+	opciones_instance.connect("boton_presionado", Callable(self, "_on_boton_presionado"))
+
+# Función que se llama cuando se presiona un botón
+func _on_boton_presionado(indice: int):
+	match indice:
+		0:
+			ejecutar_funcion_A()
+		1:
+			ejecutar_funcion_B()
+
+# Función para cerrar la escena de opciones
+func cerrar_opciones():
+	if opciones_instance:
+		opciones_instance.cerrar_opciones()  # Llama al método para liberar la escena de opciones
+		opciones_instance = null  # Limpiar la referencia después de eliminar la instancia
+
+# Ejemplos de funciones vinculadas a los botones
+func ejecutar_funcion_A():
+	MusicManager.music_player["parameters/switch_to_clip"] = "JOE BATTLE"
+	StartGame.create_game(5, "reputation", "JOE", "easy", "res://scenes/chapter_1/day1/chapter_1_day_1_hallway.tscn")
+	cerrar_opciones()  # Cerrar opciones después de ejecutar la función A
+
+func ejecutar_funcion_B():
+	cerrar_opciones()  # Cerrar opciones después de ejecutar la función B

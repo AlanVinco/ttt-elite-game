@@ -17,7 +17,6 @@ var next_scene = "res://scenes/prologo/tutorial/tutorial_school_3.tscn"
 @onready var audio_player = $AudioStreamPlayer2D  # O referencia al AudioStreamPlayer2D globalmente
 
 func _ready() -> void:
-
 	$CPUParticles2D.visible = true
 	sprite.play("down")
 	await get_tree().create_timer(0.65).timeout

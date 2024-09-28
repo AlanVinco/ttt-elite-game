@@ -126,14 +126,14 @@ _data = {
 [node name="tutorialSchool2" type="Node2D"]
 script = ExtResource("1_wv0pt")
 
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.28485, 0.28485, 0.28485, 1)
+
 [node name="bg" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(83.5003, 89)
 scale = Vector2(0.687378, 0.407725)
 texture = ExtResource("1_dcyvv")
-
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.28485, 0.28485, 0.28485, 1)
 
 [node name="player" type="AnimatedSprite2D" parent="."]
 texture_filter = 1

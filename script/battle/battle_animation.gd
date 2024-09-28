@@ -8,6 +8,8 @@ func _ready() -> void:
 	animation.play("battle_animation")
 	$TextureRect/rival_ui.play("animation")
 	$TextureRect2/Player_ui_sprites.play("player_ui")
+	await get_tree().create_timer(1.3).timeout
+	$TextureRect.visible = true
 
 func _animation_end():
 	get_tree().change_scene_to_file("res://scenes/game/game.tscn")

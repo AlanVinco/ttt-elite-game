@@ -203,6 +203,7 @@ sprite_frames = SubResource("SpriteFrames_dr633")
 animation = &"idle"
 
 [node name="transitions" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="AnimationScene" type="AnimationPlayer" parent="."]

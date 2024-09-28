@@ -1,9 +1,12 @@
-[gd_scene load_steps=26 format=3 uid="uid://bqbgj3w51p60m"]
+[gd_scene load_steps=29 format=3 uid="uid://bqbgj3w51p60m"]
 
 [ext_resource type="Script" path="res://script/battle/battle_animation.gd" id="1_kybgs"]
 [ext_resource type="Texture2D" uid="uid://drrs4f71e23de" path="res://art/bg/school/bg3.jpeg" id="1_vtx2j"]
+[ext_resource type="Texture2D" uid="uid://bp206gfcrxfdo" path="res://art/tic tac toe/bg-game.png" id="2_4r38t"]
 [ext_resource type="Texture2D" uid="uid://evy73gubqmc3" path="res://art/animations/UI Battle/animation-Sheet.png" id="2_8gpuf"]
 [ext_resource type="Texture2D" uid="uid://b0n2oicaynfdk" path="res://art/animations/UI Battle/player-animation-Sheet.png" id="3_omfxr"]
+[ext_resource type="Texture2D" uid="uid://dph3pi6dwd0k7" path="res://art/player/front/player-front.png" id="6_ghec0"]
+[ext_resource type="Texture2D" uid="uid://twr3dgjxekxu" path="res://art/ui/vs.png" id="7_k8i3i"]
 
 [sub_resource type="Animation" id="Animation_2rpju"]
 length = 0.001
@@ -42,6 +45,102 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(-80.75, 30.5)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("IRLA:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(306, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("IRLA:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("PLAYER:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-108, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("IRLA:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("VS:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("VS:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(128.5, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("VS:scale")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("VS:size")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(63, 58)]
 }
 
 [sub_resource type="Animation" id="Animation_xt26l"]
@@ -96,6 +195,102 @@ tracks/3/keys = {
 "args": [],
 "method": &"_animation_end"
 }]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("IRLA:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(2.4, 2.8, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(306, 0), Vector2(142, 0), Vector2(194, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("IRLA:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(2.4, 3.16667, 3.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("PLAYER:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(2.4, 2.8, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-108, 0), Vector2(56, 0), Vector2(25, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("IRLA:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 2.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("VS:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 3.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("VS:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(3.5, 3.6, 3.7, 3.8, 3.9, 4.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(128.5, 0), Vector2(133.5, 0), Vector2(127.5, 0), Vector2(136.5, 0), Vector2(125.5, 0), Vector2(31.5, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("VS:scale")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(3.9, 4.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(4, 4)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("VS:size")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(3.9),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(63, 58)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nb62q"]
@@ -236,12 +431,22 @@ animations = [{
 [node name="BattleAnimation" type="CanvasLayer"]
 script = ExtResource("1_kybgs")
 
+[node name="TextureRect3" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_4r38t")
+expand_mode = 1
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_nb62q")
 }
 
 [node name="bg" type="Sprite2D" parent="."]
+visible = false
 texture_filter = 1
 position = Vector2(81.5, 77)
 scale = Vector2(0.614258, 0.205078)
@@ -258,6 +463,7 @@ frame = 1
 frame_progress = 0.0531655
 
 [node name="TextureRect" type="TextureRect" parent="."]
+visible = false
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -269,7 +475,7 @@ size_flags_horizontal = 8
 
 [node name="rival_ui" type="AnimatedSprite2D" parent="TextureRect"]
 position = Vector2(145, 30.5)
-scale = Vector2(1.25, 1.05172)
+scale = Vector2(2.17969, 2.56896)
 sprite_frames = SubResource("SpriteFrames_5y5jl")
 animation = &"animation"
 
@@ -280,9 +486,41 @@ offset_bottom = 40.0
 [node name="Player_ui_sprites" type="AnimatedSprite2D" parent="TextureRect2"]
 texture_filter = 1
 position = Vector2(-80.75, 30.5)
-scale = Vector2(1.26025, 1.05172)
+scale = Vector2(1.26025, 2.56897)
 sprite_frames = SubResource("SpriteFrames_m2ku8")
 animation = &"player_ui"
+
+[node name="IRLA" type="TextureRect" parent="."]
+visible = false
+modulate = Color(0, 0, 0, 1)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -14.0
+offset_right = 68.0
+offset_bottom = 97.0
+grow_horizontal = 0
+expand_mode = 1
+
+[node name="PLAYER" type="TextureRect" parent="."]
+offset_left = -108.0
+offset_right = -68.0
+offset_bottom = 40.0
+scale = Vector2(3, 3)
+texture = ExtResource("6_ghec0")
+expand_mode = 1
+
+[node name="VS" type="TextureRect" parent="."]
+visible = false
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -31.5
+offset_right = 31.5
+offset_bottom = 58.0
+grow_horizontal = 2
+texture = ExtResource("7_k8i3i")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
