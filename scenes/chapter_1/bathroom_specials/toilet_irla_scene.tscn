@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://slcl7kp6m6ee"]
+[gd_scene load_steps=63 format=3 uid="uid://slcl7kp6m6ee"]
 
 [ext_resource type="Script" path="res://scenes/chapter_1/bathroom_specials/toilet_irla.gd" id="1_to2xg"]
 [ext_resource type="PackedScene" uid="uid://b1esxukm80kj2" path="res://scenes/window_dialogue_final.tscn" id="2_n0a48"]
@@ -9,6 +9,12 @@
 [ext_resource type="Texture2D" uid="uid://c4luad3di2s50" path="res://art/player/animations/player_golpeado_no.color.png" id="6_yglf1"]
 [ext_resource type="Texture2D" uid="uid://dgpnswn050348" path="res://art/player/animations/player_golpeado-2.png" id="7_65c60"]
 [ext_resource type="Texture2D" uid="uid://gyrsj0tcisgs" path="res://art/player/player-idle.png" id="8_eknlj"]
+[ext_resource type="Texture2D" uid="uid://bd36bww0v1wva" path="res://art/irla/bathroom/player-frotar-Sheet.png" id="10_0pqyf"]
+[ext_resource type="Texture2D" uid="uid://cfo7qwenh1gf2" path="res://art/irla/bathroom/irla-dick-fuera-idle.png" id="10_wfunf"]
+[ext_resource type="AudioStream" uid="uid://dhx18bppjdrxb" path="res://music/sounds/Zipper.mp3" id="11_vaul3"]
+[ext_resource type="Texture2D" uid="uid://crtsfokytri80" path="res://art/irla/bathroom/player-frotar-final-Sheet.png" id="13_8c5lp"]
+[ext_resource type="AudioStream" uid="uid://bwd3lduvqtybq" path="res://music/sounds/clothes_broke2.mp3" id="14_hyb8q"]
+[ext_resource type="AudioStream" uid="uid://bqkmcyeav0tu2" path="res://music/sounds/clothes_broke1.mp3" id="15_sjex1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l1tm3"]
 atlas = ExtResource("6_yglf1")
@@ -133,6 +139,230 @@ animations = [{
 "speed": 9.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_cfali"]
+atlas = ExtResource("10_0pqyf")
+region = Rect2(0, 0, 142, 157)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bnm55"]
+atlas = ExtResource("10_0pqyf")
+region = Rect2(142, 0, 142, 157)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_seaqd"]
+atlas = ExtResource("10_0pqyf")
+region = Rect2(284, 0, 142, 157)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fe2tt"]
+atlas = ExtResource("10_0pqyf")
+region = Rect2(426, 0, 142, 157)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2qd8e"]
+atlas = ExtResource("10_0pqyf")
+region = Rect2(568, 0, 142, 157)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bhcd0"]
+atlas = ExtResource("10_0pqyf")
+region = Rect2(710, 0, 142, 157)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xcrdh"]
+atlas = ExtResource("10_0pqyf")
+region = Rect2(852, 0, 142, 157)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1x532"]
+atlas = ExtResource("10_wfunf")
+region = Rect2(0, 0, 142, 157)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ooy5r"]
+atlas = ExtResource("10_wfunf")
+region = Rect2(142, 0, 142, 157)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qtqe6"]
+atlas = ExtResource("10_wfunf")
+region = Rect2(284, 0, 142, 157)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wdbcf"]
+atlas = ExtResource("10_wfunf")
+region = Rect2(426, 0, 142, 157)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y2fyt"]
+atlas = ExtResource("10_wfunf")
+region = Rect2(568, 0, 142, 157)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tmjd4"]
+atlas = ExtResource("10_wfunf")
+region = Rect2(710, 0, 142, 157)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8mrvr"]
+atlas = ExtResource("10_wfunf")
+region = Rect2(852, 0, 142, 157)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j20cw"]
+atlas = ExtResource("10_wfunf")
+region = Rect2(994, 0, 142, 157)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8jlbr"]
+atlas = ExtResource("10_wfunf")
+region = Rect2(1136, 0, 142, 157)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b7deg"]
+atlas = ExtResource("10_wfunf")
+region = Rect2(1278, 0, 142, 157)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_khbp1"]
+atlas = ExtResource("10_wfunf")
+region = Rect2(1420, 0, 142, 157)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ukwsa"]
+atlas = ExtResource("10_wfunf")
+region = Rect2(1562, 0, 142, 157)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_agbtv"]
+atlas = ExtResource("10_wfunf")
+region = Rect2(1704, 0, 142, 157)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vxl5n"]
+atlas = ExtResource("10_wfunf")
+region = Rect2(1846, 0, 142, 157)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dfd2w"]
+atlas = ExtResource("10_wfunf")
+region = Rect2(1988, 0, 142, 157)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7e1sp"]
+atlas = ExtResource("10_wfunf")
+region = Rect2(2130, 0, 142, 157)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sbolo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cfali")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bnm55")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_seaqd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fe2tt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2qd8e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bhcd0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xcrdh")
+}],
+"loop": true,
+"name": &"frotar_dick",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1x532")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ooy5r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qtqe6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wdbcf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y2fyt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tmjd4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8mrvr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j20cw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8jlbr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b7deg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_khbp1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ukwsa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_agbtv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vxl5n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dfd2w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7e1sp")
+}],
+"loop": true,
+"name": &"sacar_dick",
+"speed": 10.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fyi8n"]
+atlas = ExtResource("13_8c5lp")
+region = Rect2(0, 0, 129, 122)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xdx7b"]
+atlas = ExtResource("13_8c5lp")
+region = Rect2(129, 0, 129, 122)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o6f14"]
+atlas = ExtResource("13_8c5lp")
+region = Rect2(258, 0, 129, 122)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_chc5r"]
+atlas = ExtResource("13_8c5lp")
+region = Rect2(387, 0, 129, 122)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0h1e8"]
+atlas = ExtResource("13_8c5lp")
+region = Rect2(516, 0, 129, 122)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ctsq6"]
+atlas = ExtResource("13_8c5lp")
+region = Rect2(645, 0, 129, 122)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2b58f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fyi8n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xdx7b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o6f14")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_chc5r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0h1e8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ctsq6")
+}],
+"loop": true,
+"name": &"player_frotar",
+"speed": 8.0
+}]
+
 [node name="toilet_irla_scene" type="Node2D"]
 script = ExtResource("1_to2xg")
 TextScene = ExtResource("2_n0a48")
@@ -169,3 +399,39 @@ position = Vector2(183, 113)
 texture = ExtResource("4_mb25i")
 
 [node name="HUD" parent="." instance=ExtResource("4_3ysdf")]
+
+[node name="IRLA_BLOWJOB" type="AnimatedSprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(198, 90)
+sprite_frames = SubResource("SpriteFrames_sbolo")
+animation = &"frotar_dick"
+frame = 1
+frame_progress = 0.161362
+
+[node name="ZipperSound" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(200, 72)
+stream = ExtResource("11_vaul3")
+
+[node name="IRLA_SUCK" type="AnimatedSprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(194, 116)
+sprite_frames = SubResource("SpriteFrames_2b58f")
+animation = &"player_frotar"
+
+[node name="BlackRect" type="ColorRect" parent="."]
+visible = false
+offset_left = -35.0
+offset_top = -24.0
+offset_right = 348.0
+offset_bottom = 191.0
+color = Color(0, 0, 0, 1)
+
+[node name="broke1" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_hyb8q")
+parameters/looping = true
+
+[node name="broke2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_sjex1")
+parameters/looping = true

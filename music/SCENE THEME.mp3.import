@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ce7w7ydfm6gyx"
+path="res://.godot/imported/SCENE THEME.mp3-9c284bd3481c551114ca035a5e5fed74.mp3str"
+
+[deps]
+
+source_file="res://music/SCENE THEME.mp3"
+dest_files=["res://.godot/imported/SCENE THEME.mp3-9c284bd3481c551114ca035a5e5fed74.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

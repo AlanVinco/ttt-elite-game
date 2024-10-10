@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://d2uj58m770r6r"]
+[gd_scene load_steps=9 format=3 uid="uid://d2uj58m770r6r"]
 
 [ext_resource type="Texture2D" uid="uid://bj5od88cb781e" path="res://art/bg/bathroom.png" id="1_6sne7"]
 [ext_resource type="Script" path="res://script/chapter_1/day1/chapter_1_day_1_bathroom.gd" id="1_723nc"]
@@ -9,6 +9,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_akjjx"]
 size = Vector2(20, 82)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i7iik"]
+size = Vector2(20, 218)
 
 [node name="chapter1Day1Bathroom" type="Node2D"]
 script = ExtResource("1_723nc")
@@ -56,6 +59,25 @@ theme_override_fonts/font = ExtResource("5_bsl62")
 theme_override_font_sizes/font_size = 8
 text = "Entrar"
 
+[node name="Outside" type="Area2D" parent="."]
+position = Vector2(-24, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Outside"]
+position = Vector2(0, 99)
+shape = SubResource("RectangleShape2D_i7iik")
+
+[node name="Button" type="Button" parent="Outside"]
+visible = false
+offset_top = 32.0
+offset_right = 22.0
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("5_bsl62")
+theme_override_font_sizes/font_size = 8
+text = "Salir"
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
 [connection signal="pressed" from="Area2D/ButtonEntrar" to="." method="_on_button_entrar_pressed"]
+[connection signal="body_entered" from="Outside" to="." method="_on_outside_body_entered"]
+[connection signal="body_exited" from="Outside" to="." method="_on_outside_body_exited"]
+[connection signal="pressed" from="Outside/Button" to="." method="_on_button_pressed"]

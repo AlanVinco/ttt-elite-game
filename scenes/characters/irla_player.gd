@@ -4,6 +4,7 @@ signal llego_al_destino
 signal animacion_prioritaria_terminada  # Nueva señal
 
 @export var velocidad: float = 200.0
+@export var show_options = true
 var direccion: Vector2 = Vector2.ZERO
 var posicion_objetivo: Vector2 = Vector2.ZERO
 var animacion_prioritaria = false  # Para bloquear otras animaciones durante la prioritaria
@@ -74,7 +75,7 @@ func _on_animation_finished():
 @export var nextScene = "res://scenes/chapter_1/day1/chapter_1_day_1.tscn"
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.is_in_group("player_group"):
+	if body.is_in_group("player_group") and show_options:
 		buttonOptions.visible = true
 
 

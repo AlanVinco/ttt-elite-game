@@ -1,11 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://clpp2k1nsp13l"]
+[gd_scene load_steps=12 format=3 uid="uid://clpp2k1nsp13l"]
 
 [ext_resource type="Script" path="res://scenes/prologo/tutorial/tutorial_school_3.gd" id="1_uxtyr"]
 [ext_resource type="Texture2D" uid="uid://mntvots7248s" path="res://art/cutscenes/classroom.png" id="1_yugnb"]
-[ext_resource type="Texture2D" uid="uid://d0xcd1ue2ncci" path="res://art/cutscenes/player-no-shadow-1.png" id="2_m1ryt"]
+[ext_resource type="Texture2D" uid="uid://c3etthh8shauw" path="res://art/cutscenes/playerMad.png" id="2_f52t7"]
 [ext_resource type="Texture2D" uid="uid://lvrc07ckydm1" path="res://art/cutscenes/school.png" id="2_nqq5e"]
-[ext_resource type="Texture2D" uid="uid://dlwn25pu5nlsl" path="res://art/cutscenes/intro-angry.png" id="2_xdywr"]
+[ext_resource type="Texture2D" uid="uid://dld7ln0gk180g" path="res://art/cutscenes/player-cutscene.png" id="2_qfjk6"]
 [ext_resource type="FontFile" uid="uid://btpd2d0e87gb1" path="res://art/fonts/m6x11.ttf" id="4_qcwyt"]
+[ext_resource type="Texture2D" uid="uid://hsten8v8qnie" path="res://art/cutscenes/player-fullbody.png" id="5_uklik"]
 [ext_resource type="AudioStream" uid="uid://cufyqyi3k5a32" path="res://music/GANTZ THEME.mp3" id="7_0jmx3"]
 
 [sub_resource type="Animation" id="Animation_o5v3v"]
@@ -55,13 +56,41 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="bg3" type="TextureRect" parent="."]
+[node name="TextureRect2" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -136.0
+offset_top = -175.0
+offset_right = 1104.0
+offset_bottom = 1579.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_f52t7")
+
+[node name="TextureRect" type="ColorRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_xdywr")
+color = Color(0.340339, 0.340339, 0.340339, 1)
+
+[node name="bg3" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 28.0
+offset_top = 8.0
+offset_right = -28.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_qfjk6")
 expand_mode = 1
 
 [node name="bg2" type="TextureRect" parent="."]
@@ -83,9 +112,9 @@ texture = ExtResource("1_yugnb")
 expand_mode = 1
 
 [node name="player" type="Sprite2D" parent="."]
-position = Vector2(155, 125)
-scale = Vector2(0.135, 0.132188)
-texture = ExtResource("2_m1ryt")
+position = Vector2(203, 102)
+scale = Vector2(0.2, 0.195)
+texture = ExtResource("5_uklik")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

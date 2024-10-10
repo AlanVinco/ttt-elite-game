@@ -20,35 +20,6 @@ func _ready() -> void:
 	DialogManager.start_typing_effect(label, dialogs)
 	DialogManager.connect("all_texts_displayed", Callable(self, "_on_all_texts_displayed"))
 
-
-#func _on_all_texts_displayed():
-	#print("Todos los textos han sido completados.")
-	#match Acto:
-		#1:
-			#label.visible = false
-			#acto_2()
-			#Acto += 1
-		#2:
-			#acto_3()
-			#Acto += 1
-		#3:
-			#acto_4()
-			#Acto += 1
-		#4:
-			#acto_5()
-			#Acto += 1
-		#_:
-			#label2.visible = false
-			#get_tree().change_scene_to_file(next_scene)
-
-#func acto_2():
-	#animatedTransition.play("transition")
-	#await get_tree().create_timer(0.5).timeout
-	#dialogs = ["Mi nombre es Saenosuke Sagaraa y tengo 27 años.", 
-	#"Estudio en la universidad de TTT.", "No tengo amigos y siempre estoy solo...",
-	#"Actualmente estoy a mitad del ciclo y no puedo salirme."]
-	#DialogManager.start_typing_effect(label2, dialogs)
-
 func acto_3():
 	#Agregar transision
 	$bg1.visible = false
@@ -63,6 +34,8 @@ func acto_4():
 func acto_5():
 	#Agregar transision
 	$bg3.visible = false
+	$TextureRect.visible = false
+	
 	DialogManager.start_typing_effect(label2, dialogos_actos[Actos.ACTO_5])
 
 #MEJORAS

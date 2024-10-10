@@ -127,10 +127,20 @@ func _play_letter_sound(character) -> void:
 		if character == "BREEF":
 			audio_player.pitch_scale = 0.8
 			#audio_player.pitch_scale = randi_range(80, 100) / 100.0
-		if character == "DEMOND":
+		if character == "DEMON":
 			audio_player.pitch_scale = 0.1
 			#audio_player.pitch_scale = randi_range(80, 100) / 100.0
 		if character == "JOE":
 			audio_player.pitch_scale = 0.7
 			#audio_player.pitch_scale = randi_range(80, 100) / 100.0
+		if character == "TEACHER":
+			audio_player.pitch_scale = 2
+		if character == "OLVIRA":
+			audio_player.pitch_scale = 4
+		if character == "ARLETTA":
+			audio_player.pitch_scale = 5
+		if character == "OTZIRI":
+			audio_player.pitch_scale = 6
+		if character == "CHIZU":
+			audio_player.pitch_scale = 7
 		audio_player.play()

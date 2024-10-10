@@ -1,8 +1,9 @@
-[gd_scene load_steps=46 format=3 uid="uid://c4gwrvpsn2a"]
+[gd_scene load_steps=48 format=3 uid="uid://c4gwrvpsn2a"]
 
 [ext_resource type="Script" path="res://scenes/characters/irla_player.gd" id="1_2hnj3"]
 [ext_resource type="Texture2D" uid="uid://cpoulcivsryj7" path="res://art/breef/animations/Breef_idle.png" id="1_5c0pq"]
 [ext_resource type="Texture2D" uid="uid://b4g6xh28sqsu6" path="res://art/breef/animations/breef_walk.png" id="2_dnewa"]
+[ext_resource type="Texture2D" uid="uid://de6gr7h0t478s" path="res://art/breef/animations/breef_lose.png" id="3_8uo2r"]
 [ext_resource type="Texture2D" uid="uid://c3rifya643mga" path="res://art/breef/animations/breef_super_golpe-Sheet-no-color.png" id="3_vvhvy"]
 [ext_resource type="FontFile" uid="uid://btpd2d0e87gb1" path="res://art/fonts/m6x11.ttf" id="5_1mq0x"]
 
@@ -41,6 +42,10 @@ region = Rect2(532, 0, 76, 125)
 [sub_resource type="AtlasTexture" id="AtlasTexture_msmeu"]
 atlas = ExtResource("1_5c0pq")
 region = Rect2(608, 0, 76, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s87i4"]
+atlas = ExtResource("3_8uo2r")
+region = Rect2(0, 0, 81, 86)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mxulh"]
 atlas = ExtResource("3_vvhvy")
@@ -191,6 +196,14 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s87i4")
+}],
+"loop": true,
+"name": &"lose",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,

@@ -8,6 +8,7 @@ signal irla_bathroom
 signal irla_in_bathroom
 
 var IRLA_ACTION = "IN CLASS"
+var JOE_ACTION = "SPY"
 
 func change_time():
 	TIME += 2

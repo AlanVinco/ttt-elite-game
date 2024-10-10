@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bxqq6gngo61b7"]
+[gd_scene load_steps=14 format=3 uid="uid://bxqq6gngo61b7"]
 
 [ext_resource type="Script" path="res://script/chapter_1/day1/chapter_1_day_1_hallway.gd" id="1_3h0ct"]
 [ext_resource type="PackedScene" uid="uid://d2uj58m770r6r" path="res://scenes/chapter_1/day1/chapter_1_day_1_bathroom.tscn" id="2_f7jft"]
@@ -16,6 +16,9 @@ size = Vector2(72, 112)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7mgv1"]
 size = Vector2(10, 130)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ajjer"]
+size = Vector2(74, 130)
 
 [node name="chapter1Day1Hallway" type="Node2D"]
 script = ExtResource("1_3h0ct")
@@ -66,7 +69,7 @@ offset_right = -572.0
 offset_bottom = 81.0
 theme_override_fonts/font = ExtResource("4_6vons")
 theme_override_font_sizes/font_size = 8
-text = "Talk"
+text = "Hablar"
 
 [node name="Classroom sounds" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_e5fwy")
@@ -139,6 +142,13 @@ theme_override_fonts/font = ExtResource("4_6vons")
 theme_override_font_sizes/font_size = 8
 text = "Decline"
 
+[node name="ClassroomDoor" type="Area2D" parent="."]
+position = Vector2(104, 48)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClassroomDoor"]
+position = Vector2(32, 55)
+shape = SubResource("RectangleShape2D_ajjer")
+
 [connection signal="body_entered" from="Pervert Joe/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Pervert Joe/Area2D" to="." method="_on_area_2d_body_exited"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
@@ -147,3 +157,5 @@ text = "Decline"
 [connection signal="pressed" from="womanBathroom/BahtroomButton" to="." method="_on_bahtroom_button_pressed"]
 [connection signal="pressed" from="CanvasOptions/ColorRect/ButtonAcept" to="." method="_on_button_acept_pressed"]
 [connection signal="pressed" from="CanvasOptions/ColorRect/ButtonDecline" to="." method="_on_button_decline_pressed"]
+[connection signal="body_entered" from="ClassroomDoor" to="." method="_on_classroom_door_body_entered"]
+[connection signal="body_exited" from="ClassroomDoor" to="." method="_on_classroom_door_body_exited"]

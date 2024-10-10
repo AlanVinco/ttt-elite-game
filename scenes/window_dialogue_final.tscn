@@ -1,13 +1,27 @@
-[gd_scene load_steps=9 format=3 uid="uid://b1esxukm80kj2"]
+[gd_scene load_steps=23 format=3 uid="uid://b1esxukm80kj2"]
 
 [ext_resource type="Script" path="res://scenes/window_dialogue_final.gd" id="1_1r66o"]
 [ext_resource type="Texture2D" uid="uid://bwiwms7ffslb2" path="res://art/irla/face/irla-draw-normal-face-shadow.png" id="3_xq4ya"]
 [ext_resource type="FontFile" uid="uid://btpd2d0e87gb1" path="res://art/fonts/m6x11.ttf" id="4_m0uob"]
 [ext_resource type="Texture2D" uid="uid://bwfjjvpy84s0b" path="res://art/breef/front/breef-front.png" id="5_jgtqu"]
 [ext_resource type="Texture2D" uid="uid://rulg1rj7f27n" path="res://art/ui/black.png" id="5_tus3k"]
+[ext_resource type="Texture2D" uid="uid://b64f4timnaw10" path="res://art/irla/face/irla-quitar-sueter-normal.png" id="5_yscjt"]
 [ext_resource type="AudioStream" uid="uid://b56dcmouu4nvd" path="res://music/sounds/talkFinal.mp3" id="6_0epuj"]
 [ext_resource type="Texture2D" uid="uid://cysarud2wp245" path="res://art/joe/Joe front.png" id="6_3e35i"]
+[ext_resource type="Texture2D" uid="uid://6d4hu5dgfoau" path="res://art/irla/face/irla-quitar-falda-angry-close-eyes.png" id="6_pg45m"]
 [ext_resource type="Texture2D" uid="uid://dph3pi6dwd0k7" path="res://art/player/front/player-front.png" id="7_nutca"]
+[ext_resource type="Texture2D" uid="uid://cc6dly2w8cfj8" path="res://art/irla/face/irla-quitar-falda-angry-open-eyes.png" id="7_svbmd"]
+[ext_resource type="Texture2D" uid="uid://cugq73qo7o4xc" path="res://art/irla/face/irla-angry-tapandose-mano-abajo.png" id="8_w48ug"]
+[ext_resource type="Texture2D" uid="uid://p5qhk3mqegjg" path="res://art/demon/demon.png" id="8_y1wy6"]
+[ext_resource type="Texture2D" uid="uid://dd1hvk8tr754g" path="res://art/teacher/teach-front.png" id="9_asyl4"]
+[ext_resource type="Texture2D" uid="uid://74vqles6gm58" path="res://art/irla/face/irla-angry-no-bra.png" id="9_b5o1b"]
+[ext_resource type="Texture2D" uid="uid://bfx6s4ai3r7up" path="res://art/olvira/olvira-front.png" id="10_4x6fg"]
+[ext_resource type="Texture2D" uid="uid://c1yujw01ldxec" path="res://art/irla/face/irla-angry-no-bra-2.png" id="10_rfe6a"]
+[ext_resource type="Texture2D" uid="uid://dndg064udegq2" path="res://art/irla/face/IRLA NO BRA PANTY ANGRY.png" id="11_5iqqg"]
+[ext_resource type="Texture2D" uid="uid://dssc2lhi4s0mm" path="res://art/arletta/arletta-front.png" id="11_y58tg"]
+[ext_resource type="Texture2D" uid="uid://dnja25kfxj2km" path="res://art/irla/face/IRLA NAKED ANGRY.png" id="12_v47g8"]
+[ext_resource type="Texture2D" uid="uid://en2ibn7uo1df" path="res://art/otziri/otziri-front.png" id="12_wbyv8"]
+[ext_resource type="Texture2D" uid="uid://pe1wbr0htxo2" path="res://art/chizu/chizu-front.png" id="13_omnsu"]
 
 [node name="TextBox" type="MarginContainer"]
 offset_right = 40.0
@@ -73,6 +87,54 @@ position = Vector2(278, 144)
 scale = Vector2(0.13, 0.139)
 texture = ExtResource("3_xq4ya")
 
+[node name="IRLASUETERNORMAL" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(278, 144)
+scale = Vector2(0.13, 0.139)
+texture = ExtResource("5_yscjt")
+
+[node name="IRLAFALDANORMAL" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(278, 144)
+scale = Vector2(0.13, 0.139)
+texture = ExtResource("6_pg45m")
+
+[node name="IRLAFALDANORMAL2" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(278, 144)
+scale = Vector2(0.13, 0.139)
+texture = ExtResource("7_svbmd")
+
+[node name="IRLAINTERIOR" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(278, 144)
+scale = Vector2(0.13, 0.139)
+texture = ExtResource("8_w48ug")
+
+[node name="IRLAINTERIOR2" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(278, 144)
+scale = Vector2(0.13, 0.139)
+texture = ExtResource("9_b5o1b")
+
+[node name="IRLANUDE1" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(278, 144)
+scale = Vector2(0.13, 0.139)
+texture = ExtResource("10_rfe6a")
+
+[node name="IRLANUDE" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(278, 144)
+scale = Vector2(0.13, 0.139)
+texture = ExtResource("11_5iqqg")
+
+[node name="IRLANAKED" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(278, 144)
+scale = Vector2(0.13, 0.139)
+texture = ExtResource("12_v47g8")
+
 [node name="BREEFNORMAL" type="Sprite2D" parent="CanvasLayer"]
 visible = false
 position = Vector2(273, 111)
@@ -90,6 +152,51 @@ visible = false
 position = Vector2(43, 143)
 scale = Vector2(0.15, 0.168)
 texture = ExtResource("7_nutca")
+
+[node name="DEMONNORMAL" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+z_index = 1000
+position = Vector2(301.6, 130.483)
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("8_y1wy6")
+
+[node name="TEACHERNORMAL" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(280, 146)
+scale = Vector2(0.025, 0.028)
+texture = ExtResource("9_asyl4")
+flip_h = true
+
+[node name="OLVIRANORMAL" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+texture_filter = 1
+position = Vector2(278, 162)
+scale = Vector2(0.03, 0.034)
+texture = ExtResource("10_4x6fg")
+flip_h = true
+
+[node name="ARLETTANORMAL" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+texture_filter = 1
+position = Vector2(278, 153)
+scale = Vector2(0.03, 0.034)
+texture = ExtResource("11_y58tg")
+flip_h = true
+
+[node name="OTZIRINORMAL" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+texture_filter = 1
+position = Vector2(282, 125)
+scale = Vector2(0.2, 0.226)
+texture = ExtResource("12_wbyv8")
+flip_h = true
+
+[node name="CHIZUNORMAL" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+texture_filter = 1
+position = Vector2(296, 137)
+scale = Vector2(0.025, 0.028)
+texture = ExtResource("13_omnsu")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_0epuj")

@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var playerNpc = $PlayerAnimations
 @onready var irlaBath = $"Irla-bath"
+@onready var sex_animation = $IRLA_BLOWJOB
 @export var TextScene : PackedScene
 var back_scene = "res://scenes/chapter_1/day1/chapter_1_day_1_bathroom.tscn"
 @export var next_scene : PackedScene
@@ -15,14 +16,16 @@ var opciones_instance
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	MusicManager.music_player["parameters/switch_to_clip"] = "IRLA MAIN"
+	MusicManager.music_player.play()
 	ReputationManager.register_npc("IRLA")
 	$PlayerAnimations.play("idle")
 	await get_tree().create_timer(2.0).timeout
 	create_text(dialogs, "IRLA", "NORMAL")
+	GlobalTime.IRLA_ACTION = "IN TOILET"
 	
 	##QUITAR
 	ReputationManager.modify_reputation("IRLA", -50)
-
 
 func create_text(texto, character, emotion) -> void:
 	var text_box = TextScene.instantiate()
@@ -45,6 +48,43 @@ func _on_all_texts_displayed():
 			acto_3()
 		4:
 			acto_4()
+		5:
+			acto += 1
+			await get_tree().create_timer(2.0).timeout
+			var dialogs = ["¿Que mierda quieres de mi?",
+			"!Dejame en paz idiota!"]
+			create_text(dialogs, "IRLA", "NORMAL")
+			
+		6:
+			acto += 1
+			await get_tree().create_timer(2.0).timeout
+			sex_animation.play("frotar_dick")
+			await get_tree().create_timer(3.0).timeout
+			var dialogs = ["!Que maldito asco!",
+			"!Deja de frotar esa porqueria!"]
+			create_text(dialogs, "IRLA", "NORMAL")
+		7:
+			acto += 1
+			await get_tree().create_timer(3.0).timeout
+			GlobalTransition.transition()
+			await get_tree().create_timer(0.25).timeout
+			$BlackRect.visible = true
+			await get_tree().create_timer(2.0).timeout
+			var dialogs = ["!No, no te me acerques!",
+			"!No me toques!", "!Auxilio alguien que me ayude!", 
+			"!Quitame tus asquerosas manos!", "!AAAAAAAAAAAaaaahh!"]
+			create_text(dialogs, "IRLA", "NORMAL")
+			$broke1.play()
+			await get_tree().create_timer(2.0).timeout
+			$broke2.play()
+		8:
+			acto += 1
+			$broke1.stop()
+			$broke2.stop()
+			await get_tree().create_timer(2.0).timeout
+			$BlackRect.visible = false
+			sex_animation.visible = false
+			$IRLA_SUCK.visible = true
 		_:
 			print("Agregar final")                          
 
@@ -61,6 +101,7 @@ func acto_1():
 func acto_2():
 	if ReputationManager.get_reputation("IRLA") < 60:
 		await get_tree().create_timer(2.0).timeout
+		MusicManager.music_player["parameters/switch_to_clip"] = "MISTERY THEME"
 		dialogs = ["Hm...", "...", "!NO TE ACERQUES!"]
 		create_text(dialogs, "IRLA", "NORMAL")
 		acto+=1
@@ -94,10 +135,8 @@ func mostrar_opciones(nombres_botones: Array, npc):
 func _on_boton_presionado(indice: int):
 	match indice:
 		0:
-			print("Se presionó el botón 0: Ejecutando función A")
 			ejecutar_funcion_A()
 		1:
-			print("Se presionó el botón 1: Ejecutando función B")
 			ejecutar_funcion_B()
 		_:
 			print("Se presionó el botón %d" % indice)
@@ -110,8 +149,21 @@ func cerrar_opciones():
 
 # Ejemplos de funciones vinculadas a los botones
 func ejecutar_funcion_A():
-	print("OFunción A ejecutada")
+	acto += 2
 	cerrar_opciones()  # Cerrar opciones después de ejecutar la función A
+	GlobalTransition.transition()
+	$ZipperSound.play()
+	await get_tree().create_timer(0.5).timeout
+	$"Irla-bath".visible = false
+	$PlayerAnimations.visible = false
+	sex_animation.visible = true
+	sex_animation.play("sacar_dick")
+	await get_tree().create_timer(2.0).timeout
+	var dialogs = ["¿Pero que carajos haces?",
+	"!Quitame tu verga de la cara!", "Esta chorreando esmegma", "Que puto asco."]
+	create_text(dialogs, "IRLA", "NORMAL")
+	
+	
 
 func ejecutar_funcion_B():
 	print("Función B ejecutada")

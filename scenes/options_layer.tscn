@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://diw2dqt1tg40r"]
+[gd_scene load_steps=13 format=3 uid="uid://diw2dqt1tg40r"]
 
 [ext_resource type="Script" path="res://scenes/options_layer.gd" id="1_fk7v0"]
 [ext_resource type="Texture2D" uid="uid://cynu62lprm8k7" path="res://art/ui/options_bg.png" id="1_lorox"]
 [ext_resource type="Texture2D" uid="uid://bwiwms7ffslb2" path="res://art/irla/face/irla-draw-normal-face-shadow.png" id="3_faup5"]
+[ext_resource type="Texture2D" uid="uid://dndg064udegq2" path="res://art/irla/face/IRLA NO BRA PANTY ANGRY.png" id="4_2j28t"]
 [ext_resource type="Texture2D" uid="uid://cysarud2wp245" path="res://art/joe/Joe front.png" id="4_iedk0"]
 [ext_resource type="FontFile" uid="uid://btpd2d0e87gb1" path="res://art/fonts/m6x11.ttf" id="4_kxsqw"]
 [ext_resource type="Texture2D" uid="uid://cqqeu2gng2o0c" path="res://art/ui/buttons-texture.png" id="4_ml3wy"]
@@ -80,6 +81,22 @@ offset_bottom = 150.0
 grow_horizontal = 0
 grow_vertical = 2
 texture = ExtResource("3_faup5")
+expand_mode = 1
+
+[node name="IRLANOBRA" type="TextureRect" parent="CanvasLayer"]
+visible = false
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -136.0
+offset_top = -74.0
+offset_right = 32.0
+offset_bottom = 150.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("4_2j28t")
 expand_mode = 1
 
 [node name="JOE" type="TextureRect" parent="CanvasLayer"]
