@@ -11,7 +11,7 @@
 size = Vector2(20, 82)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i7iik"]
-size = Vector2(20, 218)
+size = Vector2(31, 218)
 
 [node name="chapter1Day1Bathroom" type="Node2D"]
 script = ExtResource("1_723nc")
@@ -36,14 +36,14 @@ position = Vector2(131, 127)
 position = Vector2(336, 104)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 31)
+position = Vector2(40, 8)
 shape = SubResource("RectangleShape2D_akjjx")
 
 [node name="ButtonEspiar" type="Button" parent="Area2D"]
 visible = false
-offset_left = -16.0
+offset_left = 24.0
 offset_top = -40.0
-offset_right = 16.0
+offset_right = 56.0
 offset_bottom = -24.0
 theme_override_fonts/font = ExtResource("5_bsl62")
 theme_override_font_sizes/font_size = 8
@@ -51,9 +51,9 @@ text = "Espiar"
 
 [node name="ButtonEntrar" type="Button" parent="Area2D"]
 visible = false
-offset_left = -16.0
+offset_left = 26.0
 offset_top = -8.0
-offset_right = 13.0
+offset_right = 55.0
 offset_bottom = 8.0
 theme_override_fonts/font = ExtResource("5_bsl62")
 theme_override_font_sizes/font_size = 8

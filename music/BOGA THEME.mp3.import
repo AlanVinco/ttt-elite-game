@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bmuya5s5mgcay"
+path="res://.godot/imported/BOGA THEME.mp3-4f3d0a17eba87cb6cb92aea642f2f773.mp3str"
+
+[deps]
+
+source_file="res://music/BOGA THEME.mp3"
+dest_files=["res://.godot/imported/BOGA THEME.mp3-4f3d0a17eba87cb6cb92aea642f2f773.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

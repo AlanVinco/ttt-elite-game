@@ -1,0 +1,51 @@
+[gd_scene load_steps=9 format=3 uid="uid://b5x7ykdrvs8pw"]
+
+[ext_resource type="Script" path="res://script/chapter_1/day1/chapter_1_day_1_azotea.gd" id="1_7e7rd"]
+[ext_resource type="Texture2D" uid="uid://bacxepyvsbbwj" path="res://art/bg/azotea/AZOTEA FINAL.png" id="2_8mu8e"]
+[ext_resource type="PackedScene" uid="uid://bpcs5g3fijv0l" path="res://scenes/player.tscn" id="2_htkf2"]
+[ext_resource type="PackedScene" uid="uid://whppd8ma2wxx" path="res://scenes/characters/olvira.tscn" id="4_r7ka6"]
+[ext_resource type="FontFile" uid="uid://btpd2d0e87gb1" path="res://art/fonts/m6x11.ttf" id="6_62pnp"]
+[ext_resource type="AudioStream" uid="uid://b68iufjl2hjhy" path="res://music/sounds/viento.mp3" id="7_nph8p"]
+[ext_resource type="PackedScene" uid="uid://dpl6yr04nxcg8" path="res://scenes/HUD/hud.tscn" id="8_bt3yn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0hke4"]
+size = Vector2(26, 130)
+
+[node name="chapter_1_day_1_azotea" type="Node2D"]
+script = ExtResource("1_7e7rd")
+
+[node name="azotea" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(422, 36)
+texture = ExtResource("2_8mu8e")
+
+[node name="Olvira2" parent="." instance=ExtResource("4_r7ka6")]
+position = Vector2(-49, 102)
+
+[node name="player" parent="." instance=ExtResource("2_htkf2")]
+position = Vector2(1010, 120)
+
+[node name="hallWay_Door" type="Area2D" parent="."]
+position = Vector2(1059, 58)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hallWay_Door"]
+position = Vector2(-2, 56)
+shape = SubResource("RectangleShape2D_0hke4")
+
+[node name="Btn_salir" type="Button" parent="hallWay_Door"]
+visible = false
+offset_left = -49.0
+offset_top = -5.0
+offset_right = -6.0
+offset_bottom = 12.0
+theme_override_fonts/font = ExtResource("6_62pnp")
+theme_override_font_sizes/font_size = 10
+text = "Regresar"
+
+[node name="viento" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_nph8p")
+volume_db = -16.421
+autoplay = true
+parameters/looping = true
+
+[node name="HUD" parent="." instance=ExtResource("8_bt3yn")]

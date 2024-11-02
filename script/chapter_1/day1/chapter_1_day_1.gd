@@ -8,7 +8,7 @@ extends Node2D
 var can_enter_hallway = false
 
 func _ready() -> void:
-	
+	GlobalTransition.changeModulate(0.75, 0.75, 0.75, 1)
 	if GlobalTime.IRLA_ACTION == "IN CLASS":
 		$irla_player.visible = true
 	#guardado:
@@ -31,19 +31,21 @@ func _ready() -> void:
 	$"CLASSROOM THEME".play()
 
 func _irla_bathroom():
-	Irla.posicion_objetivo = Vector2(430, 120)
+	Irla.posicion_objetivo = Vector2(640, 120)
 	
 func _accion_despues_de_llegar():
-	print("ya llego al baño")
 	Irla.visible = false
+	GlobalTransition.door_open_sound()
 	
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player_group"):
 		can_enter_hallway = true
+		$Area2D/Salir.visible = true
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player_group"):
 		can_enter_hallway = false
+		$Area2D/Salir.visible = false
 	
 # Método para establecer los datos cargados
 func load_save_data(scene_path):
@@ -53,10 +55,9 @@ func load_save_data(scene_path):
 	if data.has("player_position"):
 		player.position = data["player_position"]
 
-func _input(event):
-	if event.is_action_pressed("ui_right") and can_enter_hallway:
-		GlobalTransition.door_open_sound()  
-		GlobalTransition.player_position_main_classroom = player.position
-		GlobalTransition.transition()
-		await await get_tree().create_timer(0.5).timeout
-		get_tree().change_scene_to_packed(next_scene) 
+func _on_salir_pressed() -> void:
+	GlobalTransition.door_open_sound()  
+	GlobalTransition.player_position_main_classroom = player.position
+	GlobalTransition.transition()
+	await await get_tree().create_timer(0.5).timeout
+	get_tree().change_scene_to_packed(next_scene) 

@@ -1,24 +1,27 @@
-[gd_scene load_steps=14 format=3 uid="uid://bxqq6gngo61b7"]
+[gd_scene load_steps=15 format=3 uid="uid://bxqq6gngo61b7"]
 
 [ext_resource type="Script" path="res://script/chapter_1/day1/chapter_1_day_1_hallway.gd" id="1_3h0ct"]
 [ext_resource type="PackedScene" uid="uid://d2uj58m770r6r" path="res://scenes/chapter_1/day1/chapter_1_day_1_bathroom.tscn" id="2_f7jft"]
 [ext_resource type="PackedScene" uid="uid://b1esxukm80kj2" path="res://scenes/window_dialogue_final.tscn" id="2_seuhp"]
-[ext_resource type="Texture2D" uid="uid://cqs8vg5yf8drr" path="res://art/bg/pasillo.png" id="3_ryavs"]
 [ext_resource type="PackedScene" uid="uid://u2e6yaiphjic" path="res://scenes/irla_player.tscn" id="3_vdged"]
 [ext_resource type="FontFile" uid="uid://btpd2d0e87gb1" path="res://art/fonts/m6x11.ttf" id="4_6vons"]
+[ext_resource type="Texture2D" uid="uid://dodq5p7q7h78b" path="res://art/bg/pasillo2.png" id="4_gfrwn"]
 [ext_resource type="PackedScene" uid="uid://bpcs5g3fijv0l" path="res://scenes/player.tscn" id="5_l5w4q"]
 [ext_resource type="AudioStream" uid="uid://dyae68qqeijxv" path="res://music/sounds/Students sounds.mp3" id="6_e5fwy"]
 [ext_resource type="Texture2D" uid="uid://bx21bc186e8hs" path="res://art/joe/Perver Joe.png" id="7_c7kri"]
 [ext_resource type="PackedScene" uid="uid://dpl6yr04nxcg8" path="res://scenes/HUD/hud.tscn" id="8_2g48l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vjfup"]
-size = Vector2(72, 112)
+size = Vector2(56, 112)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7mgv1"]
-size = Vector2(10, 130)
+size = Vector2(66, 130)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ajjer"]
-size = Vector2(74, 130)
+size = Vector2(70.5, 130)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eifbn"]
+size = Vector2(34, 168)
 
 [node name="chapter1Day1Hallway" type="Node2D"]
 script = ExtResource("1_3h0ct")
@@ -36,7 +39,7 @@ color = Color(0.4, 0.207843, 0.054902, 1)
 [node name="BgHallway" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(8, 64)
-texture = ExtResource("3_ryavs")
+texture = ExtResource("4_gfrwn")
 
 [node name="Pervert Joe" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -47,7 +50,7 @@ texture = ExtResource("7_c7kri")
 z_index = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pervert Joe/Area2D"]
-position = Vector2(4, -2)
+position = Vector2(-4, -2)
 shape = SubResource("RectangleShape2D_vjfup")
 
 [node name="irla_player" parent="." instance=ExtResource("3_vdged")]
@@ -149,6 +152,86 @@ position = Vector2(104, 48)
 position = Vector2(32, 55)
 shape = SubResource("RectangleShape2D_ajjer")
 
+[node name="Btn_entrar_claseA" type="Button" parent="ClassroomDoor"]
+visible = false
+offset_left = 16.0
+offset_top = 8.0
+offset_right = 51.0
+offset_bottom = 25.0
+theme_override_fonts/font = ExtResource("4_6vons")
+theme_override_font_sizes/font_size = 10
+text = "Entrar"
+
+[node name="menBathDoor" type="Area2D" parent="."]
+position = Vector2(328, 48)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="menBathDoor"]
+position = Vector2(32, 55)
+shape = SubResource("RectangleShape2D_ajjer")
+
+[node name="Btn_entrar_claseA" type="Button" parent="menBathDoor"]
+visible = false
+offset_left = 16.0
+offset_top = 8.0
+offset_right = 51.0
+offset_bottom = 25.0
+theme_override_fonts/font = ExtResource("4_6vons")
+theme_override_font_sizes/font_size = 10
+text = "Entrar"
+
+[node name="elevadorDoor" type="Area2D" parent="."]
+position = Vector2(-120, 48)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="elevadorDoor"]
+position = Vector2(30.5, 55)
+shape = SubResource("RectangleShape2D_ajjer")
+
+[node name="Btn_elevador" type="Button" parent="elevadorDoor"]
+visible = false
+offset_left = 16.0
+offset_top = 8.0
+offset_right = 51.0
+offset_bottom = 25.0
+theme_override_fonts/font = ExtResource("4_6vons")
+theme_override_font_sizes/font_size = 10
+text = "Subir"
+
+[node name="PatioDoor" type="Area2D" parent="."]
+position = Vector2(752, 56)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PatioDoor"]
+position = Vector2(0, 28)
+shape = SubResource("RectangleShape2D_eifbn")
+
+[node name="Btn_Salir_patio" type="Button" parent="PatioDoor"]
+visible = false
+offset_left = -31.0
+offset_top = -8.0
+offset_right = -6.0
+offset_bottom = 9.0
+theme_override_fonts/font = ExtResource("4_6vons")
+theme_override_font_sizes/font_size = 10
+text = "Salir
+"
+
+[node name="salidaDoor" type="Area2D" parent="."]
+position = Vector2(-736, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="salidaDoor"]
+position = Vector2(7, 28)
+shape = SubResource("RectangleShape2D_eifbn")
+
+[node name="Btn_Salida" type="Button" parent="salidaDoor"]
+visible = false
+offset_left = 16.0
+offset_top = -8.0
+offset_right = 41.0
+offset_bottom = 9.0
+theme_override_fonts/font = ExtResource("4_6vons")
+theme_override_font_sizes/font_size = 10
+text = "Salir
+"
+
 [connection signal="body_entered" from="Pervert Joe/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Pervert Joe/Area2D" to="." method="_on_area_2d_body_exited"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
@@ -157,5 +240,3 @@ shape = SubResource("RectangleShape2D_ajjer")
 [connection signal="pressed" from="womanBathroom/BahtroomButton" to="." method="_on_bahtroom_button_pressed"]
 [connection signal="pressed" from="CanvasOptions/ColorRect/ButtonAcept" to="." method="_on_button_acept_pressed"]
 [connection signal="pressed" from="CanvasOptions/ColorRect/ButtonDecline" to="." method="_on_button_decline_pressed"]
-[connection signal="body_entered" from="ClassroomDoor" to="." method="_on_classroom_door_body_entered"]
-[connection signal="body_exited" from="ClassroomDoor" to="." method="_on_classroom_door_body_exited"]

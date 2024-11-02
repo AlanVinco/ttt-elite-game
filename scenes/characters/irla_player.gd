@@ -23,8 +23,6 @@ func _ready():
 	ReputationManager.register_npc(character)
 	var current_rep = ReputationManager.get_reputation(character)
 	$Label.text = "Reputacion: " + str(current_rep)
-	#Label.text = "Reputación: " + String(current_rep)
-
 
 func _process(delta):
 	if not animacion_prioritaria:  # Solo permitir movimiento si no hay animación prioritaria
@@ -130,3 +128,6 @@ func _on_button_vs_5_pressed() -> void:
 func _on_button_vs_10_pressed() -> void:
 	numberRounds = 10
 	StartGame.create_game(numberRounds, gameMode, character, difficulty, nextScene)
+
+func _on_button_talk_pressed() -> void:
+	$PanelOptions.visible = false

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bnrspsljsffi0"
+path="res://.godot/imported/chizu grito.mp3-2bec7b8ef8716525c00f79d21a770046.mp3str"
+
+[deps]
+
+source_file="res://music/sounds/men bathroom/chizu grito.mp3"
+dest_files=["res://.godot/imported/chizu grito.mp3-2bec7b8ef8716525c00f79d21a770046.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

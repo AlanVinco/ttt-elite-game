@@ -1,0 +1,190 @@
+[gd_scene load_steps=24 format=3 uid="uid://cjg4un27hpe5m"]
+
+[ext_resource type="Script" path="res://script/chapter_1/day1/chaper_1_day_1_conserjeria.gd" id="1_5icci"]
+[ext_resource type="Texture2D" uid="uid://cnujifn0g52ei" path="res://art/bg/conserjeria/conserjeria.png" id="1_80sjd"]
+[ext_resource type="PackedScene" uid="uid://bpcs5g3fijv0l" path="res://scenes/player.tscn" id="2_3t3p5"]
+[ext_resource type="PackedScene" uid="uid://b1esxukm80kj2" path="res://scenes/window_dialogue_final.tscn" id="2_k75w2"]
+[ext_resource type="Texture2D" uid="uid://dhwqoinjahobp" path="res://art/bg/conserjeria/Chunli-TV.png" id="4_7ch1b"]
+[ext_resource type="AudioStream" uid="uid://bur5upkactenx" path="res://music/sounds/tv/chunli-tv.mp3" id="5_0nx3w"]
+[ext_resource type="Texture2D" uid="uid://dip6s0k5t271x" path="res://art/conserje/consejer1.png" id="6_xrlk6"]
+[ext_resource type="FontFile" uid="uid://btpd2d0e87gb1" path="res://art/fonts/m6x11.ttf" id="7_o86m8"]
+[ext_resource type="PackedScene" uid="uid://dpl6yr04nxcg8" path="res://scenes/HUD/hud.tscn" id="9_4rdy7"]
+[ext_resource type="Shader" path="res://scenes/chapter_1/day1/shaders/tv_shader.gdshader" id="10_2v3x5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hfs47"]
+atlas = ExtResource("4_7ch1b")
+region = Rect2(0, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p48fp"]
+atlas = ExtResource("4_7ch1b")
+region = Rect2(34, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s1bhw"]
+atlas = ExtResource("4_7ch1b")
+region = Rect2(68, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yb0vy"]
+atlas = ExtResource("4_7ch1b")
+region = Rect2(102, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_72whh"]
+atlas = ExtResource("4_7ch1b")
+region = Rect2(136, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ao56p"]
+atlas = ExtResource("4_7ch1b")
+region = Rect2(170, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cf1ys"]
+atlas = ExtResource("4_7ch1b")
+region = Rect2(204, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yv7su"]
+atlas = ExtResource("4_7ch1b")
+region = Rect2(238, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r3n7l"]
+atlas = ExtResource("4_7ch1b")
+region = Rect2(272, 0, 34, 34)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ghscn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hfs47")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p48fp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s1bhw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yb0vy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_72whh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ao56p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cf1ys")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yv7su")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r3n7l")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 22.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2wal4"]
+shader = ExtResource("10_2v3x5")
+shader_parameter/crt_curve = 0.02
+shader_parameter/crt_scan_line_color = 0.347
+shader_parameter/aperture_grille_rate = 0.4
+shader_parameter/rf_switch_esque_blur = 1.0
+shader_parameter/white_noise_rate = 0.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rujhr"]
+size = Vector2(26, 130)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3bdbf"]
+size = Vector2(45.5, 91)
+
+[node name="chaper_1_day_1_conserjeria" type="Node2D"]
+script = ExtResource("1_5icci")
+TextScene = ExtResource("2_k75w2")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -544.0
+offset_top = -344.0
+offset_right = 768.0
+offset_bottom = 472.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0, 0, 0, 1)
+
+[node name="Conserjeria" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(240, 85)
+texture = ExtResource("1_80sjd")
+
+[node name="computer" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(256, 79)
+scale = Vector2(0.970588, 0.970588)
+sprite_frames = SubResource("SpriteFrames_ghscn")
+animation = &"idle"
+frame_progress = 0.908465
+centered = false
+
+[node name="tv" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_2wal4")
+offset_left = 244.0
+offset_top = 76.0
+offset_right = 298.0
+offset_bottom = 116.0
+color = Color(1, 1, 1, 0.184)
+
+[node name="conserje" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(371, 135)
+texture = ExtResource("6_xrlk6")
+
+[node name="player" parent="." instance=ExtResource("2_3t3p5")]
+position = Vector2(131, 127)
+
+[node name="chunli-tv" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(273, 101)
+stream = ExtResource("5_0nx3w")
+volume_db = -10.085
+autoplay = true
+parameters/looping = true
+
+[node name="hallWay_Door" type="Area2D" parent="."]
+position = Vector2(99, 60)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hallWay_Door"]
+position = Vector2(-2, 56)
+shape = SubResource("RectangleShape2D_rujhr")
+
+[node name="Btn_salir" type="Button" parent="hallWay_Door"]
+visible = false
+offset_left = -12.0
+offset_top = -3.0
+offset_right = 31.0
+offset_bottom = 14.0
+theme_override_fonts/font = ExtResource("7_o86m8")
+theme_override_font_sizes/font_size = 10
+text = "Salir"
+
+[node name="conserje2" type="Area2D" parent="."]
+position = Vector2(371, 135)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="conserje2"]
+position = Vector2(-0.75, -3.5)
+shape = SubResource("RectangleShape2D_3bdbf")
+
+[node name="Button" type="Button" parent="conserje2"]
+visible = false
+offset_left = -15.0
+offset_top = -64.0
+offset_right = 17.0
+offset_bottom = -47.0
+theme_override_fonts/font = ExtResource("7_o86m8")
+theme_override_font_sizes/font_size = 10
+text = "Hablar"
+
+[node name="HUD" parent="." instance=ExtResource("9_4rdy7")]
+
+[connection signal="body_entered" from="hallWay_Door" to="." method="_on_hall_way_door_body_entered"]
+[connection signal="body_exited" from="hallWay_Door" to="." method="_on_hall_way_door_body_exited"]
+[connection signal="pressed" from="hallWay_Door/Btn_salir" to="." method="_on_btn_salir_pressed"]
+[connection signal="body_entered" from="conserje2" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="conserje2" to="." method="_on_area_2d_body_exited"]
+[connection signal="pressed" from="conserje2/Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bkg3cf31src3e"
+path="res://.godot/imported/DIRECCION THEME.mp3-7dc587b3e9754f1c6ab2a6a655a95360.mp3str"
+
+[deps]
+
+source_file="res://music/DIRECCION THEME.mp3"
+dest_files=["res://.godot/imported/DIRECCION THEME.mp3-7dc587b3e9754f1c6ab2a6a655a95360.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

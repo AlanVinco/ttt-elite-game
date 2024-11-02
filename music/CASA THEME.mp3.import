@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bo7n4k4parsnc"
+path="res://.godot/imported/CASA THEME.mp3-dd940a7eef085d83c4f314e43d0bc8ac.mp3str"
+
+[deps]
+
+source_file="res://music/CASA THEME.mp3"
+dest_files=["res://.godot/imported/CASA THEME.mp3-dd940a7eef085d83c4f314e43d0bc8ac.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

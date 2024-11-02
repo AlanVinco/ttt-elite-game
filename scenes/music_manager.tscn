@@ -1,18 +1,29 @@
-[gd_scene load_steps=12 format=3 uid="uid://d1gr42naf440u"]
+[gd_scene load_steps=23 format=3 uid="uid://d1gr42naf440u"]
 
 [ext_resource type="AudioStream" uid="uid://db02mxqcq7pyd" path="res://music/IRLA_THEME.mp3" id="1_i0nhj"]
 [ext_resource type="Script" path="res://script/music_manager.gd" id="1_knx1k"]
 [ext_resource type="AudioStream" uid="uid://ws2485gqxh68" path="res://music/BREEF_BATTLE.mp3" id="2_kqhv1"]
 [ext_resource type="AudioStream" uid="uid://o6x37483fw3e" path="res://music/IRLA_MAIN.mp3" id="2_o8v53"]
 [ext_resource type="AudioStream" uid="uid://cgwfku307dibr" path="res://music/BREEF_MAIN.mp3" id="3_cxojc"]
+[ext_resource type="AudioStream" uid="uid://dgsx6oi52yuec" path="res://music/closer-track2.mp3" id="4_l8ft2"]
+[ext_resource type="AudioStream" uid="uid://corugkn0fqdur" path="res://music/closer-track3.mp3" id="5_1u8ow"]
 [ext_resource type="AudioStream" uid="uid://cil241ydqodgw" path="res://music/RAIN_THEME.mp3" id="5_e2xhw"]
 [ext_resource type="AudioStream" uid="uid://cdh5pxg2nfpl" path="res://music/CLASSROOM THEME.mp3" id="6_dtxqa"]
+[ext_resource type="AudioStream" uid="uid://bsbc0cpg1iknv" path="res://music/closer-final.mp3" id="6_sc4w0"]
+[ext_resource type="AudioStream" uid="uid://bgqgvsypg0n4f" path="res://music/BATH_ROOM.mp3" id="7_1lj11"]
 [ext_resource type="AudioStream" uid="uid://b2p345vplcbhy" path="res://music/JOE BATTLE.mp3" id="8_q2kqg"]
+[ext_resource type="AudioStream" uid="uid://cu838wn323qal" path="res://music/ESTATUA_THEME.mp3" id="8_sjpww"]
 [ext_resource type="AudioStream" uid="uid://cc01bmm05ycnq" path="res://music/MISTERY SONG.mp3" id="9_fcpnf"]
+[ext_resource type="AudioStream" uid="uid://cpbeuoifydfhx" path="res://music/CONSERJERIA THEME.mp3" id="9_y83r4"]
 [ext_resource type="AudioStream" uid="uid://ce7w7ydfm6gyx" path="res://music/SCENE THEME.mp3" id="10_00k3k"]
+[ext_resource type="AudioStream" uid="uid://d1cqdudr48h84" path="res://music/DIRECCION TEHEME.mp3" id="10_ff225"]
+[ext_resource type="AudioStream" uid="uid://bmuya5s5mgcay" path="res://music/BOGA THEME.mp3" id="11_hsepy"]
+[ext_resource type="AudioStream" uid="uid://bk7s76vdlpf46" path="res://music/closer-track1.mp3" id="11_jceha"]
+[ext_resource type="AudioStream" uid="uid://dxpwtg5qtt4sp" path="res://music/CULTO_BATTLE.mp3" id="12_48gm2"]
+[ext_resource type="AudioStream" uid="uid://codqocwlbjkp2" path="res://music/CHORIZU BATTLE.mp3" id="13_2l0ct"]
 
 [sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_4alyy"]
-clip_count = 9
+clip_count = 20
 clip_0/name = &"IRLA BATTLE"
 clip_0/stream = ExtResource("1_i0nhj")
 clip_0/auto_advance = 0
@@ -40,10 +51,85 @@ clip_7/auto_advance = 0
 clip_8/name = &"SCENE THEME"
 clip_8/stream = ExtResource("10_00k3k")
 clip_8/auto_advance = 0
+clip_9/name = &"CLOSER1"
+clip_9/stream = ExtResource("11_jceha")
+clip_9/auto_advance = 0
+clip_10/name = &"CLOSER2"
+clip_10/stream = ExtResource("4_l8ft2")
+clip_10/auto_advance = 0
+clip_11/name = &"CLOSER3"
+clip_11/stream = ExtResource("5_1u8ow")
+clip_11/auto_advance = 0
+clip_12/name = &"CLOSERFINAL"
+clip_12/stream = ExtResource("6_sc4w0")
+clip_12/auto_advance = 0
+clip_13/name = &"BATHROOM THEME"
+clip_13/stream = ExtResource("7_1lj11")
+clip_13/auto_advance = 0
+clip_14/name = &"ESTATUA THEME"
+clip_14/stream = ExtResource("8_sjpww")
+clip_14/auto_advance = 0
+clip_15/name = &"CONSERJERIA THEME"
+clip_15/stream = ExtResource("9_y83r4")
+clip_15/auto_advance = 0
+clip_16/name = &"DIRECCION THEME"
+clip_16/stream = ExtResource("10_ff225")
+clip_16/auto_advance = 0
+clip_17/name = &"BOGA BATTLE"
+clip_17/stream = ExtResource("11_hsepy")
+clip_17/auto_advance = 0
+clip_18/name = &"CULTO BATTLE"
+clip_18/stream = ExtResource("12_48gm2")
+clip_18/auto_advance = 0
+clip_19/name = &"CHORIZU BATTLE"
+clip_19/stream = ExtResource("13_2l0ct")
+clip_19/auto_advance = 0
 _transitions = {
 Vector2i(-1, 7): {
 "fade_beats": 1,
 "fade_mode": 3,
+"from_time": 0,
+"to_time": 1
+},
+Vector2i(-1, 9): {
+"fade_beats": 1,
+"fade_mode": 0,
+"from_time": 0,
+"to_time": 0
+},
+Vector2i(-1, 10): {
+"fade_beats": 1,
+"fade_mode": 0,
+"from_time": 0,
+"to_time": 0
+},
+Vector2i(-1, 11): {
+"fade_beats": 1,
+"fade_mode": 4,
+"from_time": 0,
+"to_time": 1
+},
+Vector2i(-1, 12): {
+"fade_beats": 1,
+"fade_mode": 3,
+"from_time": 0,
+"to_time": 1
+},
+Vector2i(-1, 17): {
+"fade_beats": 1,
+"fade_mode": 3,
+"from_time": 0,
+"to_time": 1
+},
+Vector2i(-1, 18): {
+"fade_beats": 1,
+"fade_mode": 4,
+"from_time": 0,
+"to_time": 1
+},
+Vector2i(-1, 19): {
+"fade_beats": 1,
+"fade_mode": 4,
 "from_time": 0,
 "to_time": 1
 },
@@ -136,6 +222,12 @@ Vector2i(7, 8): {
 "fade_mode": 3,
 "from_time": 0,
 "to_time": 1
+},
+Vector2i(11, 11): {
+"fade_beats": 1,
+"fade_mode": 0,
+"from_time": 0,
+"to_time": 0
 }
 }
 

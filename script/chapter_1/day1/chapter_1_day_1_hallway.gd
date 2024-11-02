@@ -19,11 +19,37 @@ var dialogs = []
 var opciones_instance
 
 var can_enter_main_classroom = false
-var next_scene2 = "res://scenes/chapter_1/day1/chapter_1_day_1.tscn"
 
+var scenes = {
+	"classA": {
+		"scene_path": "res://scenes/chapter_1/day1/chapter_1_day_1.tscn",
+		"button": null  # Inicialmente null, se asignará en _ready()
+	},
+	"patio": {
+		"scene_path": "res://scenes/chapter_1/day1/chapter_1_day_1_patio.tscn",
+		"button": null  # Inicialmente null, se asignará en _ready()
+	},
+	"salida": {
+		"scene_path": "res://scenes/chapter_1/day1/chapter_1_day_1_salida.tscn",
+		"button": null  # Inicialmente null, se asignará en _ready()
+	},
+	"elevador": {
+		"scene_path": "res://scenes/chapter_1/day1/chapter_1_day_1_pasillo_2.tscn",
+		"button": null  # Inicialmente null, se asignará en _ready()
+	},
+	"men_bath":{
+		"scene_path": "res://scenes/chapter_1/day1/chapter_1_day_1_men_bathroom.tscn",
+		"button": null  # Inicialmente null, se asignará en _ready()
+	}
+}
 
 func _ready() -> void:
 	ReputationManager.register_npc("JOE")
+	scenes["classA"]["button"] = $ClassroomDoor/Btn_entrar_claseA
+	scenes["patio"]["button"] = $PatioDoor/Btn_Salir_patio
+	scenes["salida"]["button"] = $salidaDoor/Btn_Salida
+	scenes["elevador"]["button"] = $elevadorDoor/Btn_elevador
+	scenes["men_bath"]["button"] = $menBathDoor/Btn_entrar_claseA
 	#Posicion player
 	if GlobalTransition.player_position_hallway != Vector2():
 		player.position = GlobalTransition.player_position_hallway
@@ -42,14 +68,24 @@ func _ready() -> void:
 		
 	if ReputationManager.get_reputation("JOE") < 100 and GlobalTime.JOE_ACTION == "SPY" :
 		$Button.visible = false
-		player.global_position.x = -550
+		player.global_position.x = -580
 		dialogs=["¿Como pudiste vencerme?", "Bueh...", "Aqui esta la llave. Disfrutala."]
 		await get_tree().create_timer(0.5).timeout
 		create_text(dialogs, "JOE", "NORMAL")
 		GlobalItems.get_key()
 		GlobalTime.JOE_ACTION = "LOSE"
+	# Conectar señales dinámicamente
+	for door_name in scenes.keys():
+		var button = scenes[door_name]["button"]
+		var door = button.get_parent()
+
+		if door and is_instance_valid(door):
+			door.connect("body_entered", Callable(self, "_on_door_body_entered").bind(door_name))
+			door.connect("body_exited", Callable(self, "_on_door_body_exited").bind(door_name))
 		
-		
+		# Conectar la señal "pressed" del botón directamente
+		if button and is_instance_valid(button):
+			button.connect("pressed", Callable(self, "_on_btn_entrar_pressed").bind(door_name))
 
 func _irla_bathroom():
 	await get_tree().create_timer(1.0).timeout
@@ -59,6 +95,7 @@ func _irla_bathroom():
 func _accion_despues_de_llegar():
 	await get_tree().create_timer(1.0).timeout
 	Irla.visible = false
+	GlobalTransition.door_open_sound()
 	GlobalTime.change_irla_actions("IN BATHROOM")
 	
 func _on_area_2d_body_entered(body: Node2D) -> void:
@@ -99,7 +136,6 @@ func _on_all_texts_displayed():
 		var nombres = ["Aceptar", "Rechazar",]
 		mostrar_opciones(nombres, "JOE")
 
-
 func _on_woman_bathroom_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player_group"):
 		$womanBathroom/BahtroomButton.visible = true
@@ -127,14 +163,13 @@ func _on_bahtroom_button_pressed() -> void:
 func _on_button_acept_pressed() -> void:
 	$CanvasOptions.visible = false
 	MusicManager.music_player["parameters/switch_to_clip"] = "JOE BATTLE"
+	GlobalTransition.player_position_hallway = player.position
 	StartGame.create_game(5, "reputation", "JOE", "easy", "res://scenes/chapter_1/day1/chapter_1_day_1_hallway.tscn")
 
 func _on_button_decline_pressed() -> void:
 	$CanvasOptions.visible = false
 
-
 #OPCIONES 
-
 # Función para generar botones en la escena de opciones con nombres personalizados
 func mostrar_opciones(nombres_botones: Array, npc):
 	opciones_instance = opciones_scene.instantiate()
@@ -169,19 +204,21 @@ func ejecutar_funcion_A():
 func ejecutar_funcion_B():
 	cerrar_opciones()  # Cerrar opciones después de ejecutar la función B
 
-func _on_classroom_door_body_entered(body: Node2D) -> void:
-	if body.is_in_group("player_group"):
-		can_enter_main_classroom = true
+func _on_door_body_entered(body: Node2D, door_name: String) -> void:
+	if body.is_in_group("player_group") and scenes.has(door_name):
+		scenes[door_name]["button"].visible = true
 
-func _on_classroom_door_body_exited(body: Node2D) -> void:
-	if body.is_in_group("player_group"):
-		can_enter_main_classroom = false
+func _on_door_body_exited(body: Node2D, door_name: String) -> void:
+	if body.is_in_group("player_group") and scenes.has(door_name):
+		scenes[door_name]["button"].visible = false
 
-
-func _input(event):
-	if event.is_action_pressed("ui_up") and can_enter_main_classroom:
-		GlobalTransition.door_open_sound()  
+func _on_btn_entrar_pressed(door_name: String) -> void:
+	if scenes.has(door_name):
+		if door_name == "elevador":
+			GlobalTransition.elevador_sound()
+		else:
+			GlobalTransition.door_open_sound()
 		GlobalTransition.player_position_hallway = player.position
 		GlobalTransition.transition()
 		await get_tree().create_timer(0.5).timeout
-		get_tree().change_scene_to_file(next_scene2)
+		get_tree().change_scene_to_file(scenes[door_name]["scene_path"])

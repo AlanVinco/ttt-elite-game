@@ -16,8 +16,7 @@ func _ready() -> void:
 	player.limit_left = -30
 	player.limit_right = 624
 	player.position.x = -10
-	MusicManager.music_player["parameters/switch_to_clip"] = "CLASSROOM THEME"
-	MusicManager.music_player.play()
+	MusicManager.music_player["parameters/switch_to_clip"] = "BATHROOM THEME"
 	
 	#### POSICION PLAYER ###
 	if GlobalTransition.player_position_woman_bahtroom != Vector2():
@@ -41,6 +40,7 @@ func _on_button_entrar_pressed() -> void:
 
 func next_scene(next_scene):
 	GlobalTransition.player_position_woman_bahtroom = player.position
+	GlobalTransition.door_open_sound()
 	GlobalTransition.transition()
 	await get_tree().create_timer(0.5).timeout
 	get_tree().change_scene_to_file(next_scene)

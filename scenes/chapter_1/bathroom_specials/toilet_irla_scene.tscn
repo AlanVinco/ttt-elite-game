@@ -1,9 +1,10 @@
-[gd_scene load_steps=63 format=3 uid="uid://slcl7kp6m6ee"]
+[gd_scene load_steps=66 format=3 uid="uid://slcl7kp6m6ee"]
 
 [ext_resource type="Script" path="res://scenes/chapter_1/bathroom_specials/toilet_irla.gd" id="1_to2xg"]
 [ext_resource type="PackedScene" uid="uid://b1esxukm80kj2" path="res://scenes/window_dialogue_final.tscn" id="2_n0a48"]
 [ext_resource type="Texture2D" uid="uid://ccjns71tvdor2" path="res://art/bg/bathroom/toilet/toilet1.png" id="2_rii81"]
 [ext_resource type="PackedScene" uid="uid://u2e6yaiphjic" path="res://scenes/irla_player.tscn" id="2_xqevy"]
+[ext_resource type="PackedScene" uid="uid://d2uj58m770r6r" path="res://scenes/chapter_1/day1/chapter_1_day_1_bathroom.tscn" id="3_21vv5"]
 [ext_resource type="PackedScene" uid="uid://dpl6yr04nxcg8" path="res://scenes/HUD/hud.tscn" id="4_3ysdf"]
 [ext_resource type="Texture2D" uid="uid://fr5rtooxoa34" path="res://art/irla/bathroom/irla-bath.png" id="4_mb25i"]
 [ext_resource type="Texture2D" uid="uid://c4luad3di2s50" path="res://art/player/animations/player_golpeado_no.color.png" id="6_yglf1"]
@@ -15,6 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://crtsfokytri80" path="res://art/irla/bathroom/player-frotar-final-Sheet.png" id="13_8c5lp"]
 [ext_resource type="AudioStream" uid="uid://bwd3lduvqtybq" path="res://music/sounds/clothes_broke2.mp3" id="14_hyb8q"]
 [ext_resource type="AudioStream" uid="uid://bqkmcyeav0tu2" path="res://music/sounds/clothes_broke1.mp3" id="15_sjex1"]
+[ext_resource type="Texture2D" uid="uid://bp8w81hqi2nes" path="res://art/irla/bathroom/cutscenes/toilet1.png" id="16_4qxin"]
+[ext_resource type="Texture2D" uid="uid://vfxxosy7ifsj" path="res://art/cutscenes/ui/historieta1.png" id="17_1v60j"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l1tm3"]
 atlas = ExtResource("6_yglf1")
@@ -366,6 +369,7 @@ animations = [{
 [node name="toilet_irla_scene" type="Node2D"]
 script = ExtResource("1_to2xg")
 TextScene = ExtResource("2_n0a48")
+next_scene = ExtResource("3_21vv5")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -544.0
@@ -435,3 +439,27 @@ parameters/looping = true
 [node name="broke2" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("15_sjex1")
 parameters/looping = true
+
+[node name="Cut" type="Node2D" parent="."]
+visible = false
+
+[node name="ColorRect2" type="ColorRect" parent="Cut"]
+offset_left = 3.0
+offset_top = 61.0
+offset_right = 115.0
+offset_bottom = 179.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect3" type="TextureRect" parent="Cut"]
+offset_left = 5.0
+offset_top = 63.0
+offset_right = 113.0
+offset_bottom = 177.0
+texture = ExtResource("17_1v60j")
+expand_mode = 1
+
+[node name="cutScene" type="Sprite2D" parent="Cut"]
+texture_filter = 1
+position = Vector2(61, 142)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("16_4qxin")

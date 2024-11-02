@@ -5,12 +5,12 @@
 [ext_resource type="PackedScene" uid="uid://cc1l4j6ds8l2p" path="res://scenes/game/cross.tscn" id="3_w7swk"]
 [ext_resource type="Texture2D" uid="uid://bp206gfcrxfdo" path="res://art/tic tac toe/bg-game.png" id="5_p84lv"]
 [ext_resource type="Texture2D" uid="uid://bwfjjvpy84s0b" path="res://art/breef/front/breef-front.png" id="7_2ikm0"]
+[ext_resource type="Texture2D" uid="uid://csncvl6yjtshr" path="res://art/chorizu/discipulo/culto_front.png" id="7_p4rlf"]
 [ext_resource type="Texture2D" uid="uid://c8y6jhtwmpdo2" path="res://art/tic tac toe/grid.png" id="7_wdavn"]
 [ext_resource type="FontFile" uid="uid://btpd2d0e87gb1" path="res://art/fonts/m6x11.ttf" id="8_ipdck"]
 [ext_resource type="Texture2D" uid="uid://cysarud2wp245" path="res://art/joe/Joe front.png" id="8_n2507"]
+[ext_resource type="Texture2D" uid="uid://uynltcih1c3l" path="res://art/chorizu/CHORIZU.png" id="8_na63v"]
 [ext_resource type="Texture2D" uid="uid://bwiwms7ffslb2" path="res://art/irla/face/irla-draw-normal-face-shadow.png" id="8_tb7bd"]
-[ext_resource type="AudioStream" uid="uid://db02mxqcq7pyd" path="res://music/IRLA_THEME.mp3" id="9_hdme8"]
-[ext_resource type="AudioStream" uid="uid://ws2485gqxh68" path="res://music/BREEF_BATTLE.mp3" id="10_ki2th"]
 
 [sub_resource type="Animation" id="Animation_545hl"]
 length = 0.001
@@ -133,6 +133,20 @@ position = Vector2(276, 122)
 scale = Vector2(0.244, 0.244)
 texture = ExtResource("8_tb7bd")
 
+[node name="culto" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(287, 65)
+scale = Vector2(0.244, 0.244)
+texture = ExtResource("7_p4rlf")
+
+[node name="chorizu" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(307, 112)
+scale = Vector2(0.244, 0.244)
+texture = ExtResource("8_na63v")
+
 [node name="breef" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(254, 95)
@@ -155,13 +169,3 @@ offset_right = 40.0
 offset_bottom = -42.0
 theme_override_fonts/font = ExtResource("8_ipdck")
 theme_override_font_sizes/font_size = 8
-
-[node name="IRLABATTLE" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("9_hdme8")
-volume_db = -5.943
-parameters/looping = false
-
-[node name="BREEFBATTLE" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("10_ki2th")
-volume_db = -5.943
-parameters/looping = false

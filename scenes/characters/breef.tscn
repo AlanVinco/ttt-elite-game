@@ -7,39 +7,39 @@
 [ext_resource type="Texture2D" uid="uid://c3rifya643mga" path="res://art/breef/animations/breef_super_golpe-Sheet-no-color.png" id="3_vvhvy"]
 [ext_resource type="FontFile" uid="uid://btpd2d0e87gb1" path="res://art/fonts/m6x11.ttf" id="5_1mq0x"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ukhyn"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_vgvnm"]
 atlas = ExtResource("1_5c0pq")
 region = Rect2(0, 0, 76, 125)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gd17r"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_wbw4f"]
 atlas = ExtResource("1_5c0pq")
 region = Rect2(76, 0, 76, 125)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8a8rf"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_slred"]
 atlas = ExtResource("1_5c0pq")
 region = Rect2(152, 0, 76, 125)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_31rca"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_so84a"]
 atlas = ExtResource("1_5c0pq")
 region = Rect2(228, 0, 76, 125)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xooh7"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_vo6fy"]
 atlas = ExtResource("1_5c0pq")
 region = Rect2(304, 0, 76, 125)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_iupt5"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_e66x3"]
 atlas = ExtResource("1_5c0pq")
 region = Rect2(380, 0, 76, 125)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cfhn4"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_y1h2c"]
 atlas = ExtResource("1_5c0pq")
 region = Rect2(456, 0, 76, 125)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qw2ta"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_1b1ar"]
 atlas = ExtResource("1_5c0pq")
 region = Rect2(532, 0, 76, 125)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_msmeu"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_tagl3"]
 atlas = ExtResource("1_5c0pq")
 region = Rect2(608, 0, 76, 125)
 
@@ -166,32 +166,32 @@ region = Rect2(525, 0, 75, 118)
 [sub_resource type="SpriteFrames" id="SpriteFrames_xrbit"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ukhyn")
+"duration": 10.0,
+"texture": SubResource("AtlasTexture_vgvnm")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gd17r")
+"texture": SubResource("AtlasTexture_wbw4f")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8a8rf")
+"texture": SubResource("AtlasTexture_slred")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_31rca")
+"texture": SubResource("AtlasTexture_so84a")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xooh7")
+"texture": SubResource("AtlasTexture_vo6fy")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_iupt5")
+"texture": SubResource("AtlasTexture_e66x3")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_cfhn4")
+"texture": SubResource("AtlasTexture_y1h2c")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qw2ta")
+"texture": SubResource("AtlasTexture_1b1ar")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_msmeu")
+"texture": SubResource("AtlasTexture_tagl3")
 }],
 "loop": true,
 "name": &"idle",
@@ -315,6 +315,7 @@ difficulty = "easy"
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_xrbit")
 animation = &"idle"
+frame_progress = 0.0279443
 
 [node name="Area2D" type="Area2D" parent="."]
 

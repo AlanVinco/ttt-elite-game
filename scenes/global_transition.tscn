@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bwtsh1udg6fl"]
+[gd_scene load_steps=10 format=3 uid="uid://bwtsh1udg6fl"]
 
 [ext_resource type="Script" path="res://script/global_transition.gd" id="1_grc56"]
 [ext_resource type="AudioStream" uid="uid://b46gqh1nlwoms" path="res://music/sounds/door look.mp3" id="2_41os5"]
 [ext_resource type="AudioStream" uid="uid://0onmnxnkuq8q" path="res://music/sounds/door open.mp3" id="3_yifdi"]
+[ext_resource type="AudioStream" uid="uid://c5degpdeocq61" path="res://music/sounds/elevador.mp3" id="4_2ny2k"]
 
 [sub_resource type="Animation" id="Animation_ptkuq"]
 resource_name = "END_ACT_TUTORIAL"
@@ -88,3 +89,7 @@ stream = ExtResource("2_41os5")
 
 [node name="Door open" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_yifdi")
+
+[node name="elevador" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_2ny2k")
+volume_db = -10.339

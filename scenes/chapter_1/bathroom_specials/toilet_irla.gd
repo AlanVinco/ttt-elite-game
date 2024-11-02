@@ -6,6 +6,8 @@ extends Node2D
 @export var TextScene : PackedScene
 var back_scene = "res://scenes/chapter_1/day1/chapter_1_day_1_bathroom.tscn"
 @export var next_scene : PackedScene
+var minigame_scene = "res://scenes/miniGame/mini_game_player.tscn"
+@onready var cutscene = $Cut
 
 var dialogs = ["¿¿PERO QUE MIERDA HACES AQUI??", "!!LARGATE YAAAA!!"]
 var acto = 1
@@ -16,8 +18,8 @@ var opciones_instance
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	cutscene.visible = false
 	MusicManager.music_player["parameters/switch_to_clip"] = "IRLA MAIN"
-	MusicManager.music_player.play()
 	ReputationManager.register_npc("IRLA")
 	$PlayerAnimations.play("idle")
 	await get_tree().create_timer(2.0).timeout
@@ -69,6 +71,7 @@ func _on_all_texts_displayed():
 			GlobalTransition.transition()
 			await get_tree().create_timer(0.25).timeout
 			$BlackRect.visible = true
+			cutscene.visible = false
 			await get_tree().create_timer(2.0).timeout
 			var dialogs = ["!No, no te me acerques!",
 			"!No me toques!", "!Auxilio alguien que me ayude!", 
@@ -85,8 +88,12 @@ func _on_all_texts_displayed():
 			$BlackRect.visible = false
 			sex_animation.visible = false
 			$IRLA_SUCK.visible = true
+			var dialogs = ["!Eres un desgraciado!",
+			"!Un bastardo!", "!Asqueroso!", 
+			"!Repulsivo!", "¿De verdad me vas a obligar a hacer esto?", "Me las vas a pagar..."]
+			create_text(dialogs, "IRLA", "NAKED")
 		_:
-			print("Agregar final")                          
+			get_tree().change_scene_to_file(minigame_scene)                         
 
 func go_to_next_scene(next_scene):
 	GlobalTransition.transition()
@@ -159,6 +166,7 @@ func ejecutar_funcion_A():
 	sex_animation.visible = true
 	sex_animation.play("sacar_dick")
 	await get_tree().create_timer(2.0).timeout
+	cutscene.visible = true
 	var dialogs = ["¿Pero que carajos haces?",
 	"!Quitame tu verga de la cara!", "Esta chorreando esmegma", "Que puto asco."]
 	create_text(dialogs, "IRLA", "NORMAL")

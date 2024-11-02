@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://b1esxukm80kj2"]
+[gd_scene load_steps=27 format=3 uid="uid://b1esxukm80kj2"]
 
 [ext_resource type="Script" path="res://scenes/window_dialogue_final.gd" id="1_1r66o"]
 [ext_resource type="Texture2D" uid="uid://bwiwms7ffslb2" path="res://art/irla/face/irla-draw-normal-face-shadow.png" id="3_xq4ya"]
@@ -22,6 +22,10 @@
 [ext_resource type="Texture2D" uid="uid://dnja25kfxj2km" path="res://art/irla/face/IRLA NAKED ANGRY.png" id="12_v47g8"]
 [ext_resource type="Texture2D" uid="uid://en2ibn7uo1df" path="res://art/otziri/otziri-front.png" id="12_wbyv8"]
 [ext_resource type="Texture2D" uid="uid://pe1wbr0htxo2" path="res://art/chizu/chizu-front.png" id="13_omnsu"]
+[ext_resource type="Texture2D" uid="uid://cxut1sp8wlgx2" path="res://art/conserje/conserje.png" id="22_1evp3"]
+[ext_resource type="Texture2D" uid="uid://b2g3bvp7dqmsy" path="res://art/boga/boga.png" id="22_jo5r8"]
+[ext_resource type="Texture2D" uid="uid://uynltcih1c3l" path="res://art/chorizu/CHORIZU.png" id="23_3ucbm"]
+[ext_resource type="Texture2D" uid="uid://csncvl6yjtshr" path="res://art/chorizu/discipulo/culto_front.png" id="23_xmk3m"]
 
 [node name="TextBox" type="MarginContainer"]
 offset_right = 40.0
@@ -50,36 +54,11 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -1.0
-offset_top = -78.0
+offset_top = -42.0
 grow_horizontal = 2
 grow_vertical = 0
 texture = ExtResource("5_tus3k")
 expand_mode = 1
-
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -20.0
-offset_top = -40.0
-offset_right = 20.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_top = 8
-theme_override_constants/margin_right = 8
-theme_override_constants/margin_bottom = 8
-
-[node name="Label" type="Label" parent="CanvasLayer/MarginContainer"]
-texture_filter = 1
-layout_mode = 2
-size_flags_horizontal = 0
-theme_override_fonts/font = ExtResource("4_m0uob")
-theme_override_font_sizes/font_size = 9
-text = "Text"
-vertical_alignment = 1
 
 [node name="IRLANORMAL" type="Sprite2D" parent="CanvasLayer"]
 visible = false
@@ -197,6 +176,55 @@ texture_filter = 1
 position = Vector2(296, 137)
 scale = Vector2(0.025, 0.028)
 texture = ExtResource("13_omnsu")
+
+[node name="BOGANORMAL" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(279, 174)
+scale = Vector2(0.1, 0.107)
+texture = ExtResource("22_jo5r8")
+
+[node name="CHORIKURINORMAL" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(278, 131)
+scale = Vector2(0.2, 0.214)
+texture = ExtResource("22_1evp3")
+
+[node name="CHORIZUNORMAL" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(279, 145)
+scale = Vector2(0.1, 0.107)
+texture = ExtResource("23_3ucbm")
+
+[node name="CULTONORMAL" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(278, 131)
+scale = Vector2(0.2, 0.214)
+texture = ExtResource("23_xmk3m")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("4_m0uob")
+theme_override_font_sizes/font_size = 9
+text = "Text"
+vertical_alignment = 1
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_0epuj")

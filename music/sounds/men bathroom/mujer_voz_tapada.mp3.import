@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bifjyvoc17w78"
+path="res://.godot/imported/mujer_voz_tapada.mp3-8b53b2de5e76b085e4121922b7d0486c.mp3str"
+
+[deps]
+
+source_file="res://music/sounds/men bathroom/mujer_voz_tapada.mp3"
+dest_files=["res://.godot/imported/mujer_voz_tapada.mp3-8b53b2de5e76b085e4121922b7d0486c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

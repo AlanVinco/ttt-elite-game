@@ -54,6 +54,11 @@ func _ready():
 	if character_name == "JOE":
 		#$BREEFBATTLE.playing = true
 		$joe.visible = true
+	if character_name == "CULTO1" or character_name == "CULTO2" or character_name == "CULTO3":
+		#$BREEFBATTLE.playing = true
+		$culto.visible = true
+	if character_name == "CHORIZU":
+		$chorizu.visible = true
 		
 		
 	$transition.visible = true

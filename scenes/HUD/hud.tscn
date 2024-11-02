@@ -26,13 +26,13 @@ offset_right = 48.0
 offset_bottom = 34.0
 theme_override_fonts/font = ExtResource("2_megso")
 theme_override_font_sizes/font_size = 8
-text = "time"
+text = "Tiempo"
 
 [node name="Button" type="Button" parent="CanvasLayer/TextureRect/LabelTime"]
 layout_mode = 0
-offset_left = 19.0
+offset_left = 22.0
 offset_top = -7.0
-offset_right = 31.0
+offset_right = 34.0
 offset_bottom = 9.0
 theme_override_fonts/font = ExtResource("2_megso")
 theme_override_font_sizes/font_size = 8
@@ -54,7 +54,8 @@ offset_right = 22.0
 offset_bottom = 34.0
 theme_override_fonts/font = ExtResource("2_megso")
 theme_override_font_sizes/font_size = 8
-text = "money"
+text = "Dinero
+"
 
 [node name="LabelKeys" type="Label" parent="CanvasLayer"]
 offset_left = 53.0
@@ -63,6 +64,6 @@ offset_right = 93.0
 offset_bottom = 34.0
 theme_override_fonts/font = ExtResource("2_megso")
 theme_override_font_sizes/font_size = 8
-text = "keys"
+text = "Llaves"
 
 [connection signal="pressed" from="CanvasLayer/TextureRect/LabelTime/Button" to="." method="_on_button_pressed"]

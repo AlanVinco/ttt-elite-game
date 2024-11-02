@@ -3,7 +3,6 @@ extends Node
 
 # Diccionario para almacenar la reputación de cada NPC
 var npc_reputation = {}
-
 # Valor inicial de reputación para cada NPC
 const INITIAL_REPUTATION = 100
 const MAX_REPUTATION = 100

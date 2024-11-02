@@ -143,4 +143,12 @@ func _play_letter_sound(character) -> void:
 			audio_player.pitch_scale = 6
 		if character == "CHIZU":
 			audio_player.pitch_scale = 7
+		if character == "BOGA":
+			audio_player.pitch_scale = 0.5
+		if character == "CHORIKURI":
+			audio_player.pitch_scale = 1.5
+		if character == "CULTO":
+			audio_player.pitch_scale = 0.6
+		if character == "CHORIZU":
+			audio_player.pitch_scale = 0.9
 		audio_player.play()

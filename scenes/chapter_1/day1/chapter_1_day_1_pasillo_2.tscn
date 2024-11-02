@@ -1,0 +1,178 @@
+[gd_scene load_steps=12 format=3 uid="uid://dkcbksd0sos1l"]
+
+[ext_resource type="Script" path="res://script/chapter_1/day1/chapter_1_day_1_pasillo_2.gd" id="1_j55ya"]
+[ext_resource type="Texture2D" uid="uid://cqs8vg5yf8drr" path="res://art/bg/pasillo.png" id="1_u2t8k"]
+[ext_resource type="PackedScene" uid="uid://b7sy07g5wfbb3" path="res://scenes/characters/arletta.tscn" id="4_j14rn"]
+[ext_resource type="PackedScene" uid="uid://bpcs5g3fijv0l" path="res://scenes/player.tscn" id="7_fjaa1"]
+[ext_resource type="PackedScene" uid="uid://yl11oo2i0k0x" path="res://scenes/characters/otziri.tscn" id="7_ud4ge"]
+[ext_resource type="FontFile" uid="uid://btpd2d0e87gb1" path="res://art/fonts/m6x11.ttf" id="8_ys86f"]
+[ext_resource type="AudioStream" uid="uid://dyae68qqeijxv" path="res://music/sounds/Students sounds.mp3" id="9_ecsir"]
+[ext_resource type="PackedScene" uid="uid://dpl6yr04nxcg8" path="res://scenes/HUD/hud.tscn" id="10_eeirs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7mgv1"]
+size = Vector2(66, 130)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ajjer"]
+size = Vector2(70.5, 130)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eifbn"]
+size = Vector2(34, 168)
+
+[node name="chapter1Day1Pasillo2" type="Node2D"]
+script = ExtResource("1_j55ya")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -744.0
+offset_top = 144.0
+offset_right = -653.0
+offset_bottom = 184.0
+scale = Vector2(16.68, 1)
+color = Color(0.4, 0.207843, 0.054902, 1)
+
+[node name="BgHallway" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(8, 64)
+texture = ExtResource("1_u2t8k")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+
+[node name="otziri" parent="." instance=ExtResource("7_ud4ge")]
+position = Vector2(32, 111)
+
+[node name="arletta" parent="." instance=ExtResource("4_j14rn")]
+position = Vector2(-548, 129)
+
+[node name="player" parent="." instance=ExtResource("7_fjaa1")]
+position = Vector2(-95, 127)
+
+[node name="Classroom sounds" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_ecsir")
+volume_db = -30.254
+autoplay = true
+parameters/looping = true
+
+[node name="HUD" parent="." instance=ExtResource("10_eeirs")]
+
+[node name="womanBathroom" type="Area2D" parent="."]
+position = Vector2(-544, 160)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="womanBathroom"]
+position = Vector2(1, -56)
+shape = SubResource("RectangleShape2D_7mgv1")
+
+[node name="BahtroomButton" type="Button" parent="womanBathroom"]
+visible = false
+texture_filter = 1
+offset_left = -16.0
+offset_top = -120.0
+offset_right = 13.0
+offset_bottom = -104.0
+theme_override_fonts/font = ExtResource("8_ys86f")
+theme_override_font_sizes/font_size = 8
+text = "Entrar"
+
+[node name="ClassroomDoor" type="Area2D" parent="."]
+position = Vector2(104, 48)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClassroomDoor"]
+position = Vector2(32, 55)
+shape = SubResource("RectangleShape2D_ajjer")
+
+[node name="Btn_entrar_claseA" type="Button" parent="ClassroomDoor"]
+visible = false
+offset_left = 16.0
+offset_top = 8.0
+offset_right = 51.0
+offset_bottom = 25.0
+theme_override_fonts/font = ExtResource("8_ys86f")
+theme_override_font_sizes/font_size = 10
+text = "Entrar"
+
+[node name="DireccionDoor" type="Area2D" parent="."]
+position = Vector2(-352, 48)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DireccionDoor"]
+position = Vector2(35.25, 55)
+shape = SubResource("RectangleShape2D_ajjer")
+
+[node name="Btn_direccion" type="Button" parent="DireccionDoor"]
+visible = false
+offset_left = 16.0
+offset_top = 8.0
+offset_right = 51.0
+offset_bottom = 25.0
+theme_override_fonts/font = ExtResource("8_ys86f")
+theme_override_font_sizes/font_size = 10
+text = "Entrar"
+
+[node name="elevadorDoor" type="Area2D" parent="."]
+position = Vector2(-120, 48)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="elevadorDoor"]
+position = Vector2(30.5, 55)
+shape = SubResource("RectangleShape2D_ajjer")
+
+[node name="Btn_elevador_bajar" type="Button" parent="elevadorDoor"]
+visible = false
+offset_left = 32.0
+offset_top = 8.0
+offset_right = 67.0
+offset_bottom = 25.0
+theme_override_fonts/font = ExtResource("8_ys86f")
+theme_override_font_sizes/font_size = 10
+text = "Bajar"
+
+[node name="elevadorDoor2" type="Area2D" parent="."]
+position = Vector2(-120, 48)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="elevadorDoor2"]
+position = Vector2(30.5, 55)
+shape = SubResource("RectangleShape2D_ajjer")
+
+[node name="Btn_elevador_subir" type="Button" parent="elevadorDoor2"]
+visible = false
+offset_left = -8.0
+offset_top = 8.0
+offset_right = 27.0
+offset_bottom = 25.0
+theme_override_fonts/font = ExtResource("8_ys86f")
+theme_override_font_sizes/font_size = 10
+text = "Subir"
+
+[node name="PatioDoor" type="Area2D" parent="."]
+position = Vector2(752, 56)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PatioDoor"]
+position = Vector2(0, 28)
+shape = SubResource("RectangleShape2D_eifbn")
+
+[node name="Btn_Salir_patio" type="Button" parent="PatioDoor"]
+visible = false
+offset_left = -31.0
+offset_top = -8.0
+offset_right = -6.0
+offset_bottom = 9.0
+theme_override_fonts/font = ExtResource("8_ys86f")
+theme_override_font_sizes/font_size = 10
+text = "Salir
+"
+
+[node name="salidaDoor" type="Area2D" parent="."]
+position = Vector2(-736, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="salidaDoor"]
+position = Vector2(7, 28)
+shape = SubResource("RectangleShape2D_eifbn")
+
+[node name="Btn_Salida" type="Button" parent="salidaDoor"]
+visible = false
+offset_left = 16.0
+offset_top = -8.0
+offset_right = 41.0
+offset_bottom = 9.0
+theme_override_fonts/font = ExtResource("8_ys86f")
+theme_override_font_sizes/font_size = 10
+text = "Salir
+"
+
+[connection signal="pressed" from="womanBathroom/BahtroomButton" to="." method="_on_bahtroom_button_pressed"]

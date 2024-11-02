@@ -1,0 +1,460 @@
+[gd_scene load_steps=63 format=3 uid="uid://dvnst3m14o84a"]
+
+[ext_resource type="Script" path="res://script/chapter_1/day1/chapter_1_day_1_men_bathroom.gd" id="1_lfjcb"]
+[ext_resource type="PackedScene" uid="uid://b1esxukm80kj2" path="res://scenes/window_dialogue_final.tscn" id="2_0gnm6"]
+[ext_resource type="Texture2D" uid="uid://bj5od88cb781e" path="res://art/bg/bathroom.png" id="2_optsp"]
+[ext_resource type="PackedScene" uid="uid://bpcs5g3fijv0l" path="res://scenes/player.tscn" id="3_vxo05"]
+[ext_resource type="PackedScene" uid="uid://dpl6yr04nxcg8" path="res://scenes/HUD/hud.tscn" id="4_4lmod"]
+[ext_resource type="FontFile" uid="uid://btpd2d0e87gb1" path="res://art/fonts/m6x11.ttf" id="5_qcdtw"]
+[ext_resource type="Texture2D" uid="uid://ce4vf4rw66vo8" path="res://art/chizu/bathroom c/llorar1-Sheet.png" id="6_gdetg"]
+[ext_resource type="Texture2D" uid="uid://licpbhbqpfj0" path="res://art/chorizu/liderB-animation.png" id="6_yhmqh"]
+[ext_resource type="AudioStream" uid="uid://dymbnq83d4yaj" path="res://music/sounds/estatua/llorar1.mp3" id="7_4se8e"]
+[ext_resource type="AudioStream" uid="uid://bifjyvoc17w78" path="res://music/sounds/men bathroom/mujer_voz_tapada.mp3" id="7_mfahr"]
+[ext_resource type="AudioStream" uid="uid://bocaikw8w763j" path="res://music/sounds/men bathroom/squirt.mp3" id="8_qnu6p"]
+[ext_resource type="Texture2D" uid="uid://du3v4y1j1uyd0" path="res://art/chizu/bathroom c/chizu_sangre-Sheet.png" id="8_stu0a"]
+[ext_resource type="AudioStream" uid="uid://bfmdpya7unkmo" path="res://music/sounds/men bathroom/lick_p.mp3" id="9_vkk5w"]
+[ext_resource type="AudioStream" uid="uid://ck7otbfvxjpq0" path="res://music/sounds/quitar_pantalon.mp3" id="9_xbys2"]
+[ext_resource type="AudioStream" uid="uid://bnj5ppuy07k3e" path="res://music/sounds/men bathroom/inside_sangre1.mp3" id="10_bhwfo"]
+[ext_resource type="AudioStream" uid="uid://cvjggwio87b" path="res://music/sounds/men bathroom/risas.mp3" id="10_jbwiy"]
+[ext_resource type="AudioStream" uid="uid://bnrspsljsffi0" path="res://music/sounds/men bathroom/chizu grito.mp3" id="11_26agj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0kpc5"]
+atlas = ExtResource("6_yhmqh")
+region = Rect2(0, 0, 155, 143)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ubhqh"]
+atlas = ExtResource("6_yhmqh")
+region = Rect2(155, 0, 155, 143)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pqsey"]
+atlas = ExtResource("6_yhmqh")
+region = Rect2(310, 0, 155, 143)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vde6n"]
+atlas = ExtResource("6_yhmqh")
+region = Rect2(465, 0, 155, 143)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a4eml"]
+atlas = ExtResource("6_yhmqh")
+region = Rect2(620, 0, 155, 143)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c2ica"]
+atlas = ExtResource("6_yhmqh")
+region = Rect2(775, 0, 155, 143)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wx51m"]
+atlas = ExtResource("6_yhmqh")
+region = Rect2(930, 0, 155, 143)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3o3x1"]
+atlas = ExtResource("6_yhmqh")
+region = Rect2(1085, 0, 155, 143)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yi8k3"]
+atlas = ExtResource("6_yhmqh")
+region = Rect2(1240, 0, 155, 143)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qr844"]
+atlas = ExtResource("6_yhmqh")
+region = Rect2(1395, 0, 155, 143)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tivhr"]
+atlas = ExtResource("6_yhmqh")
+region = Rect2(1550, 0, 155, 143)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v5dtg"]
+atlas = ExtResource("6_yhmqh")
+region = Rect2(1705, 0, 155, 143)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_80k0p"]
+atlas = ExtResource("6_yhmqh")
+region = Rect2(1860, 0, 155, 143)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_80r4t"]
+atlas = ExtResource("6_yhmqh")
+region = Rect2(2015, 0, 155, 143)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w8dpq"]
+atlas = ExtResource("6_yhmqh")
+region = Rect2(2170, 0, 155, 143)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_78kgh"]
+atlas = ExtResource("6_yhmqh")
+region = Rect2(2325, 0, 155, 143)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7qtu1"]
+atlas = ExtResource("6_yhmqh")
+region = Rect2(2480, 0, 155, 143)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sm7ns"]
+atlas = ExtResource("6_yhmqh")
+region = Rect2(2635, 0, 155, 143)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wgwce"]
+atlas = ExtResource("6_yhmqh")
+region = Rect2(2790, 0, 155, 143)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6t1cy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0kpc5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ubhqh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pqsey")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vde6n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a4eml")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c2ica")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wx51m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3o3x1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yi8k3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qr844")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tivhr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v5dtg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_80k0p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_80r4t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w8dpq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_78kgh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7qtu1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sm7ns")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wgwce")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_few1e"]
+size = Vector2(121, 119)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1t628"]
+atlas = ExtResource("6_gdetg")
+region = Rect2(0, 0, 155, 136)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bq3nl"]
+atlas = ExtResource("6_gdetg")
+region = Rect2(155, 0, 155, 136)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4r1ru"]
+atlas = ExtResource("6_gdetg")
+region = Rect2(310, 0, 155, 136)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w2p1b"]
+atlas = ExtResource("6_gdetg")
+region = Rect2(465, 0, 155, 136)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r3fq0"]
+atlas = ExtResource("6_gdetg")
+region = Rect2(620, 0, 155, 136)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i8n1u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1t628")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bq3nl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4r1ru")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w2p1b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r3fq0")
+}],
+"loop": true,
+"name": &"llorar",
+"speed": 9.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qtp8l"]
+atlas = ExtResource("8_stu0a")
+region = Rect2(0, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s5cah"]
+atlas = ExtResource("8_stu0a")
+region = Rect2(200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_euckx"]
+atlas = ExtResource("8_stu0a")
+region = Rect2(400, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y7vxs"]
+atlas = ExtResource("8_stu0a")
+region = Rect2(600, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1mm7a"]
+atlas = ExtResource("8_stu0a")
+region = Rect2(800, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vy3ja"]
+atlas = ExtResource("8_stu0a")
+region = Rect2(1000, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dkhra"]
+atlas = ExtResource("8_stu0a")
+region = Rect2(1200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ug3l"]
+atlas = ExtResource("8_stu0a")
+region = Rect2(1400, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_88n5k"]
+atlas = ExtResource("8_stu0a")
+region = Rect2(1600, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7qjt0"]
+atlas = ExtResource("8_stu0a")
+region = Rect2(1800, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iaqwe"]
+atlas = ExtResource("8_stu0a")
+region = Rect2(2000, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m8fqi"]
+atlas = ExtResource("8_stu0a")
+region = Rect2(1200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4ddn"]
+atlas = ExtResource("8_stu0a")
+region = Rect2(1400, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hd7da"]
+atlas = ExtResource("8_stu0a")
+region = Rect2(1600, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_11c3b"]
+atlas = ExtResource("8_stu0a")
+region = Rect2(1800, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6i3j"]
+atlas = ExtResource("8_stu0a")
+region = Rect2(2000, 0, 200, 200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4gvtt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qtp8l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s5cah")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_euckx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y7vxs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1mm7a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vy3ja")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dkhra")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ug3l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_88n5k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7qjt0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iaqwe")
+}],
+"loop": false,
+"name": &"pose1",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m8fqi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j4ddn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hd7da")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_11c3b")
+}, {
+"duration": 15.0,
+"texture": SubResource("AtlasTexture_i6i3j")
+}],
+"loop": true,
+"name": &"pose2",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3eiyb"]
+size = Vector2(35, 180)
+
+[node name="chapter1Day1MenBathroom" type="Node2D"]
+script = ExtResource("1_lfjcb")
+TextScene = ExtResource("2_0gnm6")
+
+[node name="Bathroom" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(300, 91)
+texture = ExtResource("2_optsp")
+flip_h = true
+
+[node name="liderC" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(120, 113)
+sprite_frames = SubResource("SpriteFrames_6t1cy")
+animation = &"idle"
+
+[node name="pelear" type="Area2D" parent="liderC"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="liderC/pelear"]
+position = Vector2(12.5, 6.5)
+shape = SubResource("RectangleShape2D_few1e")
+
+[node name="Button" type="Button" parent="liderC/pelear"]
+visible = false
+offset_left = -2.0
+offset_top = -70.0
+offset_right = 30.0
+offset_bottom = -53.0
+theme_override_fonts/font = ExtResource("5_qcdtw")
+theme_override_font_sizes/font_size = 10
+text = "Hablar"
+
+[node name="chizullorar" type="AnimatedSprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(120, 141)
+sprite_frames = SubResource("SpriteFrames_i8n1u")
+animation = &"llorar"
+
+[node name="chizu_llorar" type="AudioStreamPlayer2D" parent="chizullorar"]
+position = Vector2(13, -5)
+stream = ExtResource("7_4se8e")
+volume_db = 0.631
+parameters/looping = true
+
+[node name="chizuf1" type="AnimatedSprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(119, 146)
+sprite_frames = SubResource("SpriteFrames_4gvtt")
+animation = &"pose2"
+
+[node name="ropa" type="AudioStreamPlayer2D" parent="chizuf1"]
+position = Vector2(-18, 10)
+stream = ExtResource("9_xbys2")
+volume_db = 20.17
+
+[node name="inside" type="AudioStreamPlayer2D" parent="chizuf1"]
+position = Vector2(6, 16)
+stream = ExtResource("10_bhwfo")
+volume_db = 15.128
+
+[node name="grito" type="AudioStreamPlayer2D" parent="chizuf1"]
+position = Vector2(12, -11)
+stream = ExtResource("11_26agj")
+volume_db = 5.043
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+
+[node name="player" parent="." instance=ExtResource("3_vxo05")]
+position = Vector2(587, 127)
+
+[node name="HUD" parent="." instance=ExtResource("4_4lmod")]
+
+[node name="salir" type="Area2D" parent="."]
+position = Vector2(611, 51)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="salir"]
+position = Vector2(1.5, 48)
+shape = SubResource("RectangleShape2D_3eiyb")
+
+[node name="Button" type="Button" parent="salir"]
+visible = false
+offset_left = -12.0
+offset_top = -1.0
+offset_right = 13.0
+offset_bottom = 16.0
+theme_override_fonts/font = ExtResource("5_qcdtw")
+theme_override_font_sizes/font_size = 10
+text = "Salir
+"
+
+[node name="HUD2" parent="." instance=ExtResource("4_4lmod")]
+
+[node name="chizu_lamento" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(131, 111)
+stream = ExtResource("7_mfahr")
+volume_db = -15.127
+autoplay = true
+parameters/looping = true
+
+[node name="squirt" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(125, 138)
+stream = ExtResource("8_qnu6p")
+volume_db = 5.043
+
+[node name="lick" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(125, 138)
+stream = ExtResource("9_vkk5w")
+volume_db = 5.042
+
+[node name="risas" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(133, 83)
+stream = ExtResource("10_jbwiy")
+volume_db = -5.042
+pitch_scale = 0.54
+autoplay = true
+parameters/looping = true
+
+[connection signal="animation_looped" from="liderC" to="." method="_on_lider_c_animation_looped"]
+[connection signal="frame_changed" from="liderC" to="." method="_on_lider_c_frame_changed"]
+[connection signal="body_entered" from="liderC/pelear" to="." method="_on_pelear_body_entered"]
+[connection signal="body_exited" from="liderC/pelear" to="." method="_on_pelear_body_exited"]
+[connection signal="pressed" from="liderC/pelear/Button" to="." method="_on_button_pressed"]
+[connection signal="animation_finished" from="chizuf1" to="." method="_on_chizuf_1_animation_finished"]

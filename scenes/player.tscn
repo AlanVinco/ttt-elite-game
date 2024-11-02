@@ -157,12 +157,12 @@ animations = [{
 "speed": 13.0
 }]
 
-[sub_resource type="Gradient" id="Gradient_j3bhf"]
+[sub_resource type="Gradient" id="Gradient_owfcs"]
 offsets = PackedFloat32Array(0, 0.727273)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_f4y28"]
-gradient = SubResource("Gradient_j3bhf")
+gradient = SubResource("Gradient_owfcs")
 fill = 1
 fill_from = Vector2(0.481651, 0.518349)
 

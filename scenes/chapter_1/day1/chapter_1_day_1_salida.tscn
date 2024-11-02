@@ -1,0 +1,104 @@
+[gd_scene load_steps=16 format=3 uid="uid://bttq51uaic7yf"]
+
+[ext_resource type="Script" path="res://chapter_1_day_1_salida.gd" id="1_ihnvr"]
+[ext_resource type="Texture2D" uid="uid://c7m5xp0cpjqya" path="res://art/bg/salida/salidaBG.png" id="2_xi683"]
+[ext_resource type="Texture2D" uid="uid://c5cyy66pooldg" path="res://art/bg/salida/barrera2.png" id="3_17cyl"]
+[ext_resource type="PackedScene" uid="uid://bpcs5g3fijv0l" path="res://scenes/player.tscn" id="3_ydrgp"]
+[ext_resource type="Texture2D" uid="uid://cbychruvx0g04" path="res://art/bg/salida/cono.png" id="4_2xeu4"]
+[ext_resource type="FontFile" uid="uid://btpd2d0e87gb1" path="res://art/fonts/m6x11.ttf" id="4_s3ev5"]
+[ext_resource type="PackedScene" uid="uid://dpl6yr04nxcg8" path="res://scenes/HUD/hud.tscn" id="5_q513s"]
+[ext_resource type="Texture2D" uid="uid://bnmbhgpq7e2sl" path="res://art/police/police-idle_sheet.png" id="7_bpjwj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_au6lw"]
+atlas = ExtResource("7_bpjwj")
+region = Rect2(0, 0, 77, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t5h3c"]
+atlas = ExtResource("7_bpjwj")
+region = Rect2(77, 0, 77, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0xt1x"]
+atlas = ExtResource("7_bpjwj")
+region = Rect2(154, 0, 77, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bicsh"]
+atlas = ExtResource("7_bpjwj")
+region = Rect2(231, 0, 77, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tg5fu"]
+atlas = ExtResource("7_bpjwj")
+region = Rect2(308, 0, 77, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yjfly"]
+animations = [{
+"frames": [{
+"duration": 20.0,
+"texture": SubResource("AtlasTexture_au6lw")
+}, {
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_t5h3c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0xt1x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bicsh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tg5fu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 9.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ke556"]
+size = Vector2(34, 168)
+
+[node name="chapter_1_day_1_salida" type="Node2D"]
+script = ExtResource("1_ihnvr")
+
+[node name="salida" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(427, 86)
+texture = ExtResource("2_xi683")
+
+[node name="barrera" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(639, 102)
+texture = ExtResource("3_17cyl")
+
+[node name="cono" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(835, 118)
+texture = ExtResource("4_2xeu4")
+
+[node name="police" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(737, 111)
+sprite_frames = SubResource("SpriteFrames_yjfly")
+flip_h = true
+
+[node name="player" parent="." instance=ExtResource("3_ydrgp")]
+position = Vector2(636, 127)
+
+[node name="salidaDoor" type="Area2D" parent="."]
+position = Vector2(635, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="salidaDoor"]
+position = Vector2(1, 27)
+shape = SubResource("RectangleShape2D_ke556")
+
+[node name="Btn_entrada" type="Button" parent="salidaDoor"]
+visible = false
+offset_left = -16.0
+offset_top = -8.0
+offset_right = 19.0
+offset_bottom = 9.0
+theme_override_fonts/font = ExtResource("4_s3ev5")
+theme_override_font_sizes/font_size = 10
+text = "Entrar
+"
+
+[node name="HUD" parent="." instance=ExtResource("5_q513s")]

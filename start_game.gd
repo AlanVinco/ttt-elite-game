@@ -19,7 +19,6 @@ func create_game(rounds, gameMode, character, difficulty, nextScene):
 	if NUMBER_ROUNDS > 0 and GAME_MODE != "" and CHARACTER != "" and DIFFICULTY != "" and NEXT_SCENE != "":
 		print("Iniciar juego")
 		MusicManager.music_player["parameters/switch_to_clip"] = CHARACTER + " BATTLE"
-		
 		# Cargar la escena de batalla y cambiar la textura
 		await load_battle_scene()
 		if CHARACTER == "IRLA":
@@ -28,6 +27,13 @@ func create_game(rounds, gameMode, character, difficulty, nextScene):
 			change_battle_texture("res://art/breef/front/breef_trainer.png")
 		if CHARACTER == "JOE":
 			change_battle_texture("res://art/joe/Joe_trainer.png")
+		if CHARACTER == "BOGA":
+			change_battle_texture("res://art/boga/boga_trainer.png")
+		if CHARACTER == "CULTO1" or CHARACTER == "CULTO2" or CHARACTER == "CULTO3":
+			MusicManager.music_player["parameters/switch_to_clip"] = "CULTO BATTLE"
+			change_battle_texture("res://art/chorizu/discipulo/culto_trainer.png")
+		if CHARACTER == "CHORIZU":
+			change_battle_texture("res://art/chorizu/chorizu_trainer.png")
 	else:
 		print("No se pudo iniciar el juego")
 		print("Game Configuration:\n",

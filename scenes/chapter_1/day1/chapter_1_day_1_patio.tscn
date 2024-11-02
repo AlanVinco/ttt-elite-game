@@ -1,0 +1,75 @@
+[gd_scene load_steps=8 format=3 uid="uid://cx6egcmjsumme"]
+
+[ext_resource type="Script" path="res://script/chapter_1/day1/chapter_1_day_1_patio.gd" id="1_p3ejb"]
+[ext_resource type="PackedScene" uid="uid://bpcs5g3fijv0l" path="res://scenes/player.tscn" id="2_flgdn"]
+[ext_resource type="Texture2D" uid="uid://bwpdenvhxs71p" path="res://art/bg/patio/patioFinal.png" id="2_wljin"]
+[ext_resource type="FontFile" uid="uid://btpd2d0e87gb1" path="res://art/fonts/m6x11.ttf" id="4_7hg4p"]
+[ext_resource type="PackedScene" uid="uid://dpl6yr04nxcg8" path="res://scenes/HUD/hud.tscn" id="5_ntkvc"]
+[ext_resource type="PackedScene" uid="uid://c4gwrvpsn2a" path="res://scenes/characters/breef.tscn" id="6_2nv1s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b5ff8"]
+size = Vector2(26, 130)
+
+[node name="chapter_1_day_1_patio" type="Node2D"]
+script = ExtResource("1_p3ejb")
+
+[node name="Bathroom" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(296, 88)
+texture = ExtResource("2_wljin")
+
+[node name="Breef" parent="." instance=ExtResource("6_2nv1s")]
+position = Vector2(319, 116)
+
+[node name="player" parent="." instance=ExtResource("2_flgdn")]
+position = Vector2(-46, 127)
+
+[node name="hallWay_Door" type="Area2D" parent="."]
+position = Vector2(-80, 72)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hallWay_Door"]
+position = Vector2(3, 55)
+shape = SubResource("RectangleShape2D_b5ff8")
+
+[node name="Btn_entrar_pasillo" type="Button" parent="hallWay_Door"]
+visible = false
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_fonts/font = ExtResource("4_7hg4p")
+theme_override_font_sizes/font_size = 10
+text = "Regresar"
+
+[node name="conserjeria_Door" type="Area2D" parent="."]
+position = Vector2(72, 72)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="conserjeria_Door"]
+position = Vector2(3, 55)
+shape = SubResource("RectangleShape2D_b5ff8")
+
+[node name="Btn_conserjeria" type="Button" parent="conserjeria_Door"]
+visible = false
+offset_left = -16.0
+offset_top = 8.0
+offset_right = 19.0
+offset_bottom = 25.0
+theme_override_fonts/font = ExtResource("4_7hg4p")
+theme_override_font_sizes/font_size = 10
+text = "Entrar"
+
+[node name="estatua_Door" type="Area2D" parent="."]
+position = Vector2(664, 72)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="estatua_Door"]
+position = Vector2(3, 55)
+shape = SubResource("RectangleShape2D_b5ff8")
+
+[node name="Btn_entrar_estatua" type="Button" parent="estatua_Door"]
+visible = false
+offset_left = -16.0
+offset_right = 9.0
+offset_bottom = 17.0
+theme_override_fonts/font = ExtResource("4_7hg4p")
+theme_override_font_sizes/font_size = 10
+text = "Salir"
+
+[node name="HUD" parent="." instance=ExtResource("5_ntkvc")]
